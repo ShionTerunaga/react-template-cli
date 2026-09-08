@@ -7,39 +7,39 @@ import { classMerger } from "ts-utility-kit/merger";
 
 type HeadingFont = keyof typeof headingFontStyle;
 interface HeadingStyle {
-    as?: Extract<ElementType, "h1" | "h2" | "h3">;
-    fontStyle?: HeadingFont;
-    color?: TextTheme;
-    style?: React.CSSProperties;
-    className?: string;
+  as?: Extract<ElementType, "h1" | "h2" | "h3">;
+  fontStyle?: HeadingFont;
+  color?: TextTheme;
+  style?: React.CSSProperties;
+  className?: string;
 }
 interface HeadingProps extends HeadingStyle, ChildrenOnly {}
 
 export function Heading<T extends HeadingProps>(
-    props: CheckerProps<T, HeadingProps, "Heading Props Error">
+  props: CheckerProps<T, HeadingProps, "Heading Props Error">,
 ) {
-    const {
-        as = "h1",
-        fontStyle = "firstBig",
-        color = "textNormal",
-        style,
-        className,
-        children
-    } = props;
+  const {
+    as = "h1",
+    fontStyle = "firstBig",
+    color = "textNormal",
+    style,
+    className,
+    children,
+  } = props;
 
-    const cn = classMerger([
-        headingFontStyle[fontStyle],
-        textColor[color],
-        className ? className : ""
-    ]);
+  const cn = classMerger([
+    headingFontStyle[fontStyle],
+    textColor[color],
+    className ? className : "",
+  ]);
 
-    const componentProps = {
-        className: cn,
-        style,
-        children
-    };
+  const componentProps = {
+    className: cn,
+    style,
+    children,
+  };
 
-    const Components = as;
+  const Components = as;
 
-    return <Components {...componentProps} />;
+  return <Components {...componentProps} />;
 }

@@ -3,33 +3,30 @@ import { CardListView } from "@/components/view";
 import { APIView } from "@/features/harry-potter";
 import { ja } from "@/shared/lang/ja";
 import { CheckerProps } from "@/shared/types/object";
-import { isNone, Option } from 'ts-utility-kit/option'
-import { isErr, Result } from 'ts-utility-kit/result'
+import { isNone, Option } from "ts-utility-kit/option";
+import { isErr, Result } from "ts-utility-kit/result";
 import { FetcherError } from "@/shared/error/fetcher";
 
 interface Props {
-    character: Result<Option<APIView[]>, FetcherError>;
+  character: Result<Option<APIView[]>, FetcherError>;
 }
 
 function ServerSideRenderScreen<T extends Props>(
-    props: CheckerProps<T, Props, "This props is different from Props.">
+  props: CheckerProps<T, Props, "This props is different from Props.">,
 ) {
-    const { character } = props;
+  const { character } = props;
 
-    if (isErr(character)) {
-        return <Box>サーバーサイドレンダーが失敗してます。</Box>;
-    }
+  if (isErr(character)) {
+    return <Box>サーバーサイドレンダーが失敗してます。</Box>;
+  }
 
-    if (isNone(character.value)) {
-        return <Box>表示するデータがありません。</Box>;
-    }
+  if (isNone(character.value)) {
+    return <Box>表示するデータがありません。</Box>;
+  }
 
-    return (
-        <CardListView
-            potters={character.value.value}
-            title={ja.app.serverSideRenderPotter.title}
-        />
-    );
+  return (
+    <CardListView potters={character.value.value} title={ja.app.serverSideRenderPotter.title} />
+  );
 }
 
 export default ServerSideRenderScreen;
