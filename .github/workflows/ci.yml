@@ -54,4 +54,4 @@ jobs:
         run: pnpm build
 
       - name: Test React templates
-        run: pnpm test:react-bin
+        run: pnpm test:e2e
