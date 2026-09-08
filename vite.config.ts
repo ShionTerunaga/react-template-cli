@@ -13,7 +13,7 @@ const external = new Set(
 
 export default defineConfig({
     build: {
-        target: "node24",
+        target: "node26",
         outDir: "bin",
         emptyOutDir: false,
         minify: false,
