@@ -65,6 +65,7 @@
         "csstype": "^3.2.3",
         "fast-glob": "^3.3.3",
         "gh-issue-kit": "^0.11.0",
+        "oxlint-tsgolint": "^7.0.2001",
         "picocolors": "^1.1.1",
         "ts-utility-kit": "^2.0.0",
         "validate-npm-package-name": "^7.0.0"
