@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2
+
+### Patch Changes
+
+- [`babd473`](https://github.com/ShionTerunaga/react-template-cli/commit/babd4735556d7d631dc53f5fb34264f36d24129f)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - fixed format
+
 ## 0.1.1
 
 ### Patch Changes
