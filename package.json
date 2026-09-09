@@ -11,7 +11,8 @@
     ],
     "type": "module",
     "scripts": {
-        "initial": "pnpm exec lefthook install && pnpm install",
+        "initial": "pnpm exec lefthook install && pnpm install && pnpm install:templates",
+        "install:templates": "pnpm --dir template/next/app/tailwind install --frozen-lockfile && pnpm --dir template/next/app/vanilla-extract install --frozen-lockfile && pnpm --dir template/next/pages/tailwind install --frozen-lockfile && pnpm --dir template/next/pages/vanilla-extract install --frozen-lockfile && pnpm --dir template/tanstack-router/tailwind install --frozen-lockfile && pnpm --dir template/tanstack-router/vanilla-extract install --frozen-lockfile",
         "build:only": "pnpm exec vite build && node scripts/write/bin-write.mts",
         "write:template-env": "node scripts/write/template-env.mts",
         "cp:frontend-template:bin": "pnpm write:template-env && node scripts/copy/template/copy-frontend-template-bin.mts",
