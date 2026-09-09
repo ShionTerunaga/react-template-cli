@@ -1,105 +1,34 @@
 {
-    "name": "create-react-template",
-    "version": "0.1.2",
-    "description": "CLI for generating frontend templates",
-    "license": "MIT",
-    "bin": {
-        "create-frontend-template": "./bin/index.mjs"
-    },
-    "files": [
-        "bin"
-    ],
-    "type": "module",
-    "scripts": {
-        "initial": "pnpm exec lefthook install && pnpm install && pnpm install:templates",
-        "install:templates": "pnpm --dir template/next/app/tailwind install --frozen-lockfile && pnpm --dir template/next/app/vanilla-extract install --frozen-lockfile && pnpm --dir template/next/pages/tailwind install --frozen-lockfile && pnpm --dir template/next/pages/vanilla-extract install --frozen-lockfile && pnpm --dir template/tanstack-router/tailwind install --frozen-lockfile && pnpm --dir template/tanstack-router/vanilla-extract install --frozen-lockfile",
-        "build:only": "pnpm exec vite build && node scripts/write/bin-write.mts",
-        "write:template-env": "node scripts/write/template-env.mts",
-        "cp:frontend-template:bin": "pnpm write:template-env && node scripts/copy/template/copy-frontend-template-bin.mts",
-        "build": "pnpm cp:frontend-template:bin && pnpm exec vite build && node scripts/write/bin-write.mts",
-        "build:release": "pnpm cp:frontend-template:bin && pnpm exec vite build && node scripts/write/bin-write.mts && pnpm format && pnpm lint:fix",
-        "dev:next-app-tailwind": "pnpm --dir template/next/app/tailwind run dev",
-        "build:next-app-tailwind": "pnpm --dir template/next/app/tailwind run build",
-        "test:next-app-tailwind": "pnpm --dir template/next/app/tailwind run test",
-        "start:next-app-tailwind": "pnpm --dir template/next/app/tailwind run start",
-        "dev:next-app-vanilla-extract": "pnpm --dir template/next/app/vanilla-extract run dev",
-        "build:next-app-vanilla-extract": "pnpm --dir template/next/app/vanilla-extract run build",
-        "test:next-app-vanilla-extract": "pnpm --dir template/next/app/vanilla-extract run test",
-        "start:next-app-vanilla-extract": "pnpm --dir template/next/app/vanilla-extract run start",
-        "dev:next-pages-tailwind": "pnpm --dir template/next/pages/tailwind run dev",
-        "build:next-pages-tailwind": "pnpm --dir template/next/pages/tailwind run build",
-        "test:next-pages-tailwind": "pnpm --dir template/next/pages/tailwind run test",
-        "start:next-pages-tailwind": "pnpm --dir template/next/pages/tailwind run start",
-        "dev:next-pages-vanilla-extract": "pnpm --dir template/next/pages/vanilla-extract run dev",
-        "build:next-pages-vanilla-extract": "pnpm --dir template/next/pages/vanilla-extract run build",
-        "test:next-pages-vanilla-extract": "pnpm --dir template/next/pages/vanilla-extract run test",
-        "start:next-pages-vanilla-extract": "pnpm --dir template/next/pages/vanilla-extract run start",
-        "dev:tanstack-router-tailwind": "pnpm --dir template/tanstack-router/tailwind run dev",
-        "build:tanstack-router-tailwind": "pnpm --dir template/tanstack-router/tailwind run build",
-        "test:tanstack-router-tailwind": "pnpm --dir template/tanstack-router/tailwind run test",
-        "start:tanstack-router-tailwind": "pnpm --dir template/tanstack-router/tailwind run serve",
-        "dev:tanstack-router-vanilla-extract": "pnpm --dir template/tanstack-router/vanilla-extract run dev",
-        "build:tanstack-router-vanilla-extract": "pnpm --dir template/tanstack-router/vanilla-extract run build",
-        "test:tanstack-router-vanilla-extract": "pnpm --dir template/tanstack-router/vanilla-extract run test",
-        "start:tanstack-router-vanilla-extract": "pnpm --dir template/tanstack-router/vanilla-extract run start",
-        "changeset": "changeset",
-        "format": "pnpm exec oxfmt --write .",
-        "format:check": "pnpm exec oxfmt --check .",
-        "lint": "pnpm lint:fix",
-        "lint:check": "pnpm exec oxlint . --ignore-pattern \"template/**\" && pnpm --dir template/next/app/tailwind exec oxlint . --ignore-path .gitignore && pnpm --dir template/next/app/vanilla-extract exec oxlint . --ignore-path .gitignore && pnpm --dir template/next/pages/tailwind exec oxlint . --ignore-path .gitignore && pnpm --dir template/next/pages/vanilla-extract exec oxlint . --ignore-path .gitignore && pnpm --dir template/tanstack-router/tailwind exec oxlint . --ignore-path .gitignore && pnpm --dir template/tanstack-router/vanilla-extract exec oxlint . --ignore-path .gitignore",
-        "lint:fix": "pnpm exec oxlint . --fix --ignore-pattern \"template/**\" && pnpm --dir template/next/app/tailwind exec oxlint . --fix --ignore-path .gitignore && pnpm --dir template/next/app/vanilla-extract exec oxlint . --fix --ignore-path .gitignore && pnpm --dir template/next/pages/tailwind exec oxlint . --fix --ignore-path .gitignore && pnpm --dir template/next/pages/vanilla-extract exec oxlint . --fix --ignore-path .gitignore && pnpm --dir template/tanstack-router/tailwind exec oxlint . --fix --ignore-path .gitignore && pnpm --dir template/tanstack-router/vanilla-extract exec oxlint . --fix --ignore-path .gitignore",
-        "check": "pnpm lint:check && pnpm format:check",
-        "fix": "pnpm lint:fix && pnpm format",
-        "version-packages": "changeset version",
-        "release:pr": "changeset version",
-        "prepare:release-branch": "node scripts/release/prepare-release-branch.mts",
-        "test:e2e": "pnpm build && cd test/auto && UV_CACHE_DIR=../../.tmp/uv uv sync && UV_CACHE_DIR=../../.tmp/uv uv run main.py"
-    },
-    "dependencies": {
-        "@clack/prompts": "^0.11.0",
-        "@commitlint/cli": "^19.8.1",
-        "@commitlint/config-conventional": "^19.8.1",
-        "@types/adm-zip": "^0.5.7",
-        "adm-zip": "^0.6.0",
-        "commander": "^14.0.2",
-        "conf": "^15.0.2",
-        "csstype": "^3.2.3",
-        "fast-glob": "^3.3.3",
-        "gh-issue-kit": "^0.11.0",
-        "oxlint-tsgolint": "^7.0.2001",
-        "picocolors": "^1.1.1",
-        "ts-utility-kit": "^2.0.0",
-        "validate-npm-package-name": "^7.0.0"
-    },
-    "devDependencies": {
-        "@changesets/changelog-github": "^0.5.1",
-        "@changesets/cli": "^3.0.2",
-        "@tsconfig/node26": "^26.0.1",
-        "@types/conf": "^3.0.3",
-        "@types/node": "^26.5.0",
-        "@types/validate-npm-package-name": "^4.0.2",
-        "@vercel/ncc": "^0.38.4",
-        "@vitejs/plugin-react": "^6.0.1",
-        "assert": "^2.1.0",
-        "browserify-zlib": "^0.2.0",
-        "buffer": "^6.0.3",
-        "copy-webpack-plugin": "^13.0.1",
-        "find-packages": "^10.0.4",
-        "oxfmt": "^0.43.0",
-        "oxlint": "^1.58.0",
-        "process": "^0.11.10",
-        "stream-browserify": "^3.0.0",
-        "ts-loader": "^9.5.4",
-        "tsconfig-paths": "^4.2.0",
-        "typescript": "^7.0.2",
-        "vite": "^8.2.2"
-    },
-    "preferGlobal": true,
-    "engines": {
-        "node": ">=26"
-    },
-    "packageManager": "pnpm@10.18.3",
-    "pnpm": {
-        "overrides": {}
-    }
+  "name": "create-react-template",
+  "version": "0.1.2",
+  "description": "CLI for generating frontend templates",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=26"
+  },
+  "bin": {
+    "create-frontend-template": "./bin/index.mjs"
+  },
+  "files": [
+    "bin"
+  ],
+  "preferGlobal": true,
+  "packageManager": "pnpm@10.18.3",
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@types/adm-zip": "^0.5.7",
+    "adm-zip": "^0.6.0",
+    "commander": "^14.0.2",
+    "conf": "^15.0.2",
+    "csstype": "^3.2.3",
+    "fast-glob": "^3.3.3",
+    "gh-issue-kit": "^0.11.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "picocolors": "^1.1.1",
+    "ts-utility-kit": "^2.0.0",
+    "validate-npm-package-name": "^7.0.0"
+  }
 }
