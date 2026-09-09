@@ -4,13 +4,16 @@
 
 ### Minor Changes
 
-- [`a27ae15`](https://github.com/ShionTerunaga/frontend-template/commit/a27ae1510016c148e0b6c80feb509061d25825f3) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Upgrade Next.js
+- [`a27ae15`](https://github.com/ShionTerunaga/frontend-template/commit/a27ae1510016c148e0b6c80feb509061d25825f3)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Upgrade Next.js
 
 ## 6.1.0
 
 ### Minor Changes
 
-- [`cd4228c`](https://github.com/ShionTerunaga/frontend-template/commit/cd4228c49d4ae0f975d4d8bab733fcc33641cdc6) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - I omitted `expect` for statements containing `assert`.
+- [`cd4228c`](https://github.com/ShionTerunaga/frontend-template/commit/cd4228c49d4ae0f975d4d8bab733fcc33641cdc6)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - I omitted
+  `expect` for statements containing `assert`.
 
 ## 6.0.2
 
@@ -24,7 +27,7 @@
 
 - 9ad1482: author: @ShionTerunaga
 
-  Upgrade packages
+    Upgrade packages
 
 ## 6.0.0
 

@@ -1,7 +1,7 @@
 import DynamicScreen from "@/screen/dynamic-render/dynamic-render";
 
 function DynamicRender() {
-  return <DynamicScreen />;
+    return <DynamicScreen />;
 }
 
 export default DynamicRender;

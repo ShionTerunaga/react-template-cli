@@ -4,25 +4,25 @@ import { classMerger } from "ts-utility-kit/merger";
 import type { CSSProperties, ElementType } from "react";
 
 interface Props extends ChildrenOnly {
-  as?: Extract<ElementType, "div" | "section" | "article" | "main" | "p">;
-  className?: string;
-  style?: Omit<CSSProperties, "center">;
+    as?: Extract<ElementType, "div" | "section" | "article" | "main" | "p">;
+    className?: string;
+    style?: Omit<CSSProperties, "center">;
 }
 
 export function FontCenter<T extends Props>(
-  props: CheckerProps<T, Props, "fontCenter has not any props.">,
+    props: CheckerProps<T, Props, "fontCenter has not any props.">
 ) {
-  const { as = "p", className, style, children } = props;
+    const { as = "p", className, style, children } = props;
 
-  const Component = as;
+    const Component = as;
 
-  const cn = classMerger(["text-center", className ?? ""]);
+    const cn = classMerger(["text-center", className ?? ""]);
 
-  const asProps = {
-    className: cn,
-    style,
-    children,
-  };
+    const asProps = {
+        className: cn,
+        style,
+        children
+    };
 
-  return <Component {...asProps} />;
+    return <Component {...asProps} />;
 }

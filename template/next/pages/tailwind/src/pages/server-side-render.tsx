@@ -6,21 +6,21 @@ import type { Option } from "ts-utility-kit/option";
 import { FetcherError } from "@/shared/error/fetcher";
 
 interface Props {
-  character: Result<Option<APIView[]>, FetcherError>;
+    character: Result<Option<APIView[]>, FetcherError>;
 }
 
 export const getServerSideProps = (async () => {
-  const character = await getCharacter();
+    const character = await getCharacter();
 
-  return {
-    props: {
-      character,
-    },
-  };
+    return {
+        props: {
+            character
+        }
+    };
 }) satisfies GetServerSideProps<Props>;
 
 export default function ServerSideRender({
-  character,
+    character
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  return <ServerSideRenderScreen character={character} />;
+    return <ServerSideRenderScreen character={character} />;
 }

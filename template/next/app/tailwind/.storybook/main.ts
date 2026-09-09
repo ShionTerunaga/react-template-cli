@@ -7,41 +7,44 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: [
-    {
-      name: "@storybook/addon-styling-webpack",
-      options: {
-        rules: [
-          {
-            test: /\.css$/,
-            sideEffects: true,
-            use: [
-              "style-loader",
-              {
-                loader: "css-loader",
-                options: {},
-              },
-              {
-                loader: "postcss-loader",
-                options: {
-                  postcssOptions: {
-                    config: path.resolve(__dirname, "../postcss.config.mjs"),
-                  },
-                },
-              },
-            ],
-            exclude: /\.vanilla\.css$/,
-          },
-        ],
-      },
+    stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+    addons: [
+        {
+            name: "@storybook/addon-styling-webpack",
+            options: {
+                rules: [
+                    {
+                        test: /\.css$/,
+                        sideEffects: true,
+                        use: [
+                            "style-loader",
+                            {
+                                loader: "css-loader",
+                                options: {}
+                            },
+                            {
+                                loader: "postcss-loader",
+                                options: {
+                                    postcssOptions: {
+                                        config: path.resolve(
+                                            __dirname,
+                                            "../postcss.config.mjs"
+                                        )
+                                    }
+                                }
+                            }
+                        ],
+                        exclude: /\.vanilla\.css$/
+                    }
+                ]
+            }
+        }
+    ],
+    framework: {
+        name: "@storybook/nextjs",
+        options: {}
     },
-  ],
-  framework: {
-    name: "@storybook/nextjs",
-    options: {},
-  },
-  staticDirs: ["../public"],
+    staticDirs: ["../public"]
 };
 
 export default config;

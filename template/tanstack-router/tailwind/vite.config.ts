@@ -7,17 +7,17 @@ import { fileURLToPath, URL } from "node:url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    tanstackRouter({
-      target: "react",
-      autoCodeSplitting: true,
-    }),
-    viteReact(),
-    tailwindcss(),
-  ],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
-  },
+    plugins: [
+        tanstackRouter({
+            target: "react",
+            autoCodeSplitting: true
+        }),
+        viteReact(),
+        tailwindcss()
+    ],
+    resolve: {
+        alias: {
+            "@": fileURLToPath(new URL("./src", import.meta.url))
+        }
+    }
 });

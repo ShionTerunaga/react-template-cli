@@ -7,56 +7,58 @@ import { isErr } from "ts-utility-kit/result";
 import { FetcherError } from "@/shared/error/fetcher";
 
 export function useSinglePageCharacters() {
-  const [fetchCharacter, setFetchCharacter] = useState<Option<Array<APIView>>>(createNone());
+    const [fetchCharacter, setFetchCharacter] =
+        useState<Option<Array<APIView>>>(createNone());
 
-  const [error, setError] = useState<Option<FetcherError>>(createNone());
+    const [error, setError] = useState<Option<FetcherError>>(createNone());
 
-  useEffect(() => {
-    let isMounted = true;
+    useEffect(() => {
+        let isMounted = true;
 
-    (async () => {
-      const result = await getCharacter();
+        (async () => {
+            const result = await getCharacter();
 
-      if (!isMounted) return;
+            if (!isMounted) return;
 
-      if (isErr(result)) {
-        setError(createSome(result.err));
-        return;
-      }
+            if (isErr(result)) {
+                setError(createSome(result.err));
+                return;
+            }
 
-      if (isNone(result.value)) {
-        return;
-      }
+            if (isNone(result.value)) {
+                return;
+            }
 
-      setFetchCharacter(createSome(result.value.value));
-    })();
+            setFetchCharacter(createSome(result.value.value));
+        })();
 
-    return () => {
-      isMounted = false;
+        return () => {
+            isMounted = false;
+        };
+    }, []);
+
+    const isLoading: boolean = useMemo(() => {
+        return isNone(fetchCharacter) && isNone(error);
+    }, [fetchCharacter, error]);
+
+    const characters: Array<SinglePageGetCharacters> = useMemo(() => {
+        if (isNone(fetchCharacter)) {
+            return [];
+        }
+
+        const mappedCharacters: Array<SinglePageGetCharacters> =
+            fetchCharacter.value.map((item) => ({
+                id: item.id,
+                name: item.name,
+                image: item.image
+            }));
+
+        return mappedCharacters;
+    }, [fetchCharacter]);
+
+    return {
+        isLoading,
+        characters,
+        error
     };
-  }, []);
-
-  const isLoading: boolean = useMemo(() => {
-    return isNone(fetchCharacter) && isNone(error);
-  }, [fetchCharacter, error]);
-
-  const characters: Array<SinglePageGetCharacters> = useMemo(() => {
-    if (isNone(fetchCharacter)) {
-      return [];
-    }
-
-    const mappedCharacters: Array<SinglePageGetCharacters> = fetchCharacter.value.map((item) => ({
-      id: item.id,
-      name: item.name,
-      image: item.image,
-    }));
-
-    return mappedCharacters;
-  }, [fetchCharacter]);
-
-  return {
-    isLoading,
-    characters,
-    error,
-  };
 }

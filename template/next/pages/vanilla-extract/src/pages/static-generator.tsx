@@ -6,21 +6,21 @@ import type { InferGetStaticPropsType, GetStaticProps } from "next";
 import { FetcherError } from "@/shared/error/fetcher";
 
 interface Props {
-  character: Result<Option<APIView[]>, FetcherError>;
+    character: Result<Option<APIView[]>, FetcherError>;
 }
 
 export const getStaticProps = (async () => {
-  const character = await getCharacter();
+    const character = await getCharacter();
 
-  return {
-    props: {
-      character,
-    },
-  };
+    return {
+        props: {
+            character
+        }
+    };
 }) satisfies GetStaticProps<Props>;
 
 export default function StaticGenerator({
-  character,
+    character
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <StaticGeneratorScreen character={character} />;
+    return <StaticGeneratorScreen character={character} />;
 }
