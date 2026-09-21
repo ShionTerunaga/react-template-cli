@@ -19,7 +19,13 @@ const ignoredDirectoryNames = new Set([
     "out",
     "storybook-static"
 ]);
-const ignoredFileNames = new Set([".DS_Store", "count.txt", "next-env.d.ts"]);
+const ignoredFileNames = new Set([
+    ".DS_Store",
+    "count.txt",
+    "next-env.d.ts",
+    "CHANGELOG.md",
+    "pnpm-lock.yaml"
+]);
 
 function shouldIgnoreFile(name: string): boolean {
     return (
@@ -51,7 +57,12 @@ function copyDir(src: string, dest: string): void {
         }
 
         const srcPath = path.join(src, entry.name);
-        const destName = entry.name === ".env" ? "env" : entry.name;
+        const destName =
+            entry.name === ".env"
+                ? "env"
+                : entry.name === ".gitignore"
+                  ? "gitignore"
+                  : entry.name;
         const destPath = path.join(dest, destName);
 
         if (entry.isDirectory()) {
