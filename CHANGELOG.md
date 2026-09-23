@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.3
+
+### Patch Changes
+
+- [`ab57d58`](https://github.com/ShionTerunaga/react-template-cli/commit/ab57d580f2c38b530c916a375a47ea6e02a233fb)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - I modified the
+  script in the template to prevent the installation of unnecessary files.
+
 ## 0.1.2
 
 ### Patch Changes
