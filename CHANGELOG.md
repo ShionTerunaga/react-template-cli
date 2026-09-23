@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.4
+
+### Patch Changes
+
+- [`77b6a09`](https://github.com/ShionTerunaga/react-template-cli/commit/77b6a09cf37d34c18b1280fea986fb35b4f31eab)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - upgrade package
+  of react
+
 ## 0.1.3
 
 ### Patch Changes
