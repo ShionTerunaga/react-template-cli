@@ -1,8 +1,10 @@
 import { Box } from "@/lib/ui";
-import { CheckerProps } from "@/shared/types/object";
-import Image, { StaticImageData } from "next/image";
-import { CSSProperties } from "react";
+import type { CheckerProps } from "@/shared/types/object";
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
+import type { CSSProperties } from "react";
 import { classMerger } from "ts-utility-kit/merger";
+import { motion } from "motion/react";
 
 interface Props {
     key: number | string;
@@ -67,6 +69,7 @@ export function Card<T extends Props>(
             >
                 {title}
             </p>
+            <motion.div />
         </Box>
     );
 }
