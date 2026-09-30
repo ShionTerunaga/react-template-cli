@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.5
+
+### Patch Changes
+
+- [`cb11b0b`](https://github.com/ShionTerunaga/react-template-cli/commit/cb11b0bfd25fb1c3e3836d46667efbdf66d33c70)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - upgrade package
+  of next.js
+
 ## 0.1.4
 
 ### Patch Changes
