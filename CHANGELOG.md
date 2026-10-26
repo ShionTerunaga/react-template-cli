@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.6
+
+### Patch Changes
+
+- [`7c43446`](https://github.com/ShionTerunaga/react-template-cli/commit/7c434467496b21fa1397644e9cc95ccbb8be8e70)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Changes to
+  Tanstack Router Hooks
+
+- [`f3901aa`](https://github.com/ShionTerunaga/react-template-cli/commit/f3901aae942a0990b30df5eaf45557cf39ef4a8d)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - upgrade next
+
 ## 0.1.5
 
 ### Patch Changes
