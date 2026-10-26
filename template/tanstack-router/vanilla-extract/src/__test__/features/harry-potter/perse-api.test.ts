@@ -1,66 +1,66 @@
-import { describe, it, expect, assert } from "vitest";
-import { createNone, createSome, isSome } from "ts-utility-kit/option";
-import { isOk } from "ts-utility-kit/result";
-import { type APIRes } from "@/features/harry-potter";
-import { parseApi } from "@/features/harry-potter/service/parse-api";
+import { describe, it, expect, assert } from 'vitest';
+import { createNone, createSome, isSome } from 'ts-utility-kit/option';
+import { isOk } from 'ts-utility-kit/result';
+import { type APIRes } from '@/features/harry-potter';
+import { parseApi } from '@/features/harry-potter/service/parse-api';
 
 const mockApiData: APIRes = [
     {
-        id: "1",
-        name: "Harry Potter",
-        alternate_names: ["The Boy Who Lived"],
-        species: "human",
-        gender: "male",
-        house: "Gryffindor",
-        dateOfBirth: "31-07-1980",
+        id: '1',
+        name: 'Harry Potter',
+        alternate_names: ['The Boy Who Lived'],
+        species: 'human',
+        gender: 'male',
+        house: 'Gryffindor',
+        dateOfBirth: '31-07-1980',
         yearOfBirth: 1980,
         wizard: true,
-        ancestry: "half-blood",
-        eyeColour: "green",
-        hairColour: "black",
+        ancestry: 'half-blood',
+        eyeColour: 'green',
+        hairColour: 'black',
         wand: {
-            wood: "holly",
-            core: "phoenix feather",
-            length: 11
+            wood: 'holly',
+            core: 'phoenix feather',
+            length: 11,
         },
-        patronus: "stag",
+        patronus: 'stag',
         hogwartsStudent: true,
         hogwartsStaff: false,
-        actor: "Daniel Radcliffe",
+        actor: 'Daniel Radcliffe',
         alternate_actors: [],
         alive: true,
-        image: "https://hp-api/image.jpg"
+        image: 'https://hp-api/image.jpg',
     },
     {
-        id: "2",
-        name: "Unknown Ghost",
+        id: '2',
+        name: 'Unknown Ghost',
         alternate_names: [],
-        species: "ghost",
-        gender: "",
-        house: "",
+        species: 'ghost',
+        gender: '',
+        house: '',
         dateOfBirth: null,
         yearOfBirth: null,
         wizard: false,
-        ancestry: "",
-        eyeColour: "",
-        hairColour: "",
+        ancestry: '',
+        eyeColour: '',
+        hairColour: '',
         wand: {
-            wood: "",
-            core: "",
-            length: null
+            wood: '',
+            core: '',
+            length: null,
         },
-        patronus: "",
+        patronus: '',
         hogwartsStudent: false,
         hogwartsStaff: false,
-        actor: "",
+        actor: '',
         alternate_actors: [],
         alive: false,
-        image: ""
-    }
+        image: '',
+    },
 ];
 
-describe("perseApi", () => {
-    it("適したフォーマットが返ってくる", () => {
+describe('perseApi', () => {
+    it('適したフォーマットが返ってくる', () => {
         const result = parseApi(mockApiData);
 
         assert(isOk(result));
@@ -71,15 +71,15 @@ describe("perseApi", () => {
 
         const harry = result.value.value[0]!;
 
-        expect(harry.name).toBe("Harry Potter");
-        expect(harry.alternateNames).toEqual(["The Boy Who Lived"]);
-        expect(harry.gender).toBe("male");
-        expect(harry.dateOfBirth).toEqual(createSome("31-07-1980"));
+        expect(harry.name).toBe('Harry Potter');
+        expect(harry.alternateNames).toEqual(['The Boy Who Lived']);
+        expect(harry.gender).toBe('male');
+        expect(harry.dateOfBirth).toEqual(createSome('31-07-1980'));
         expect(harry.yearOfBirth).toEqual(createSome(1980));
         expect(harry.wand.length).toEqual(createSome(11));
     });
 
-    it("nullをOptionに変換できているか", () => {
+    it('nullをOptionに変換できているか', () => {
         const dataWithNulls: APIRes = [
             {
                 ...mockApiData[0],
@@ -87,10 +87,10 @@ describe("perseApi", () => {
                 yearOfBirth: null,
                 wand: {
                     ...mockApiData[0].wand,
-                    length: null
+                    length: null,
                 },
-                image: "https://someimage.jpg"
-            }
+                image: 'https://someimage.jpg',
+            },
         ];
 
         const result = parseApi(dataWithNulls);
@@ -108,10 +108,10 @@ describe("perseApi", () => {
         expect(character.wand.length).toEqual(createNone());
     });
 
-    it("imageが空文字の時は要素が省かれる", () => {
+    it('imageが空文字の時は要素が省かれる', () => {
         const dataWithNoImages: APIRes = mockApiData.map((item) => ({
             ...item,
-            image: ""
+            image: '',
         }));
 
         const result = parseApi(dataWithNoImages);

@@ -27,9 +27,7 @@ interface BoxProps extends BoxStyle {
     children?: ReactNode;
 }
 
-export function Box<T extends BoxProps>(
-    props: CheckerProps<T, BoxProps, "Box Props Error">
-) {
+export function Box<T extends BoxProps>(props: CheckerProps<T, BoxProps, "Box Props Error">) {
     const {
         as = "div",
         width = "auto",
@@ -40,7 +38,7 @@ export function Box<T extends BoxProps>(
         borderRadius = "none",
         style,
         className = "",
-        children
+        children,
     } = props;
 
     const cn = classMerger([
@@ -50,7 +48,7 @@ export function Box<T extends BoxProps>(
         boxVariants.boxShadowStyle[boxShadow],
         boxVariants.colorStyle[color],
         boxVariants.border[border],
-        boxVariants.boxBorderRadiusStyle[borderRadius]
+        boxVariants.boxBorderRadiusStyle[borderRadius],
     ]);
 
     const As = as;

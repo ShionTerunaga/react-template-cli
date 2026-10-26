@@ -15,7 +15,7 @@ const router = createRouter({
     defaultPreload: "intent",
     scrollRestoration: true,
     defaultStructuralSharing: true,
-    defaultPreloadStaleTime: 0
+    defaultPreloadStaleTime: 0,
 });
 
 // Register the router instance for type safety
@@ -32,7 +32,7 @@ if (rootElement && !rootElement.innerHTML) {
     root.render(
         <StrictMode>
             <RouterProvider router={router} />
-        </StrictMode>
+        </StrictMode>,
     );
 }
 

@@ -19,12 +19,7 @@ function SingleDynamicFetch() {
         return <Box>No characters.</Box>;
     }
 
-    return (
-        <CardListView
-            potters={characters}
-            title={ja.app.singleDynamicPotter.title}
-        />
-    );
+    return <CardListView potters={characters} title={ja.app.singleDynamicPotter.title} />;
 }
 
 export default SingleDynamicFetch;

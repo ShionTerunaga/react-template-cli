@@ -5,7 +5,7 @@ export const appTheme = {
     white: "#FFFFFF",
     likeBlue: "aqua",
     likeGreen: "#33FFCC",
-    popupBackground: "rgba(0,0,0,0.6)"
+    popupBackground: "rgba(0,0,0,0.6)",
 };
 
 export type Color =

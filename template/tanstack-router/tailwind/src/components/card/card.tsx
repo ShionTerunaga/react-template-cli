@@ -13,9 +13,7 @@ interface Props {
     srcHeight: number;
 }
 
-export function Card<T extends Props>(
-    props: CheckerProps<T, Props, "different card props">
-) {
+export function Card<T extends Props>(props: CheckerProps<T, Props, "different card props">) {
     const { title, src, alt, srcWidth, srcHeight, boxHeight } = props;
 
     // Integrate dynamic width/height via inline style (optional: could be arbitrary Tailwind classes)
@@ -38,7 +36,7 @@ export function Card<T extends Props>(
                 "ease-in",
                 "hover:-translate-y-1",
                 "hover:border-[#93c5fd]",
-                "hover:shadow-[0_20px_36px_rgba(30,64,175,0.22)]"
+                "hover:shadow-[0_20px_36px_rgba(30,64,175,0.22)]",
             ])}
             style={cardStyle}
         >
@@ -49,7 +47,7 @@ export function Card<T extends Props>(
                     "w-full",
                     "border-b",
                     "border-b-slate-200",
-                    "object-cover"
+                    "object-cover",
                 ])}
                 style={{ height: srcHeight }}
                 width={srcWidth}
@@ -62,7 +60,7 @@ export function Card<T extends Props>(
                     "text-[1rem]",
                     "font-bold",
                     "leading-[1.35]",
-                    "text-slate-900"
+                    "text-slate-900",
                 ])}
             >
                 {title}

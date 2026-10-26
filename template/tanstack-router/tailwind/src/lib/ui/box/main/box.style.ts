@@ -6,33 +6,33 @@ export const boxVariants = {
         middle: "w-[300px]",
         big: "w-[450px]",
         auto: "w-auto",
-        full: "w-screen"
+        full: "w-screen",
     },
     boxHeightStyle: {
         small: "h-[150px]",
         middle: "h-[300px]",
         big: "h-[450px]",
         auto: "h-auto",
-        full: "h-screen"
+        full: "h-screen",
     },
     boxBorderRadiusStyle: {
         none: "",
         small: "rounded-sm",
         middle: "rounded-md",
         big: "rounded-xl",
-        full: "rounded-full"
+        full: "rounded-full",
     },
     border: {
         none: "",
         thin: "border border-gray-200",
         middle: "border-2 border-gray-300",
-        thick: "border-4 border-gray-400"
+        thick: "border-4 border-gray-400",
     },
     boxShadowStyle: {
         none: "",
         small: "shadow-sm",
         middle: "shadow-md",
-        big: "shadow-xl"
+        big: "shadow-xl",
     },
     colorStyle: {
         white: "bg-white text-slate-900",
@@ -42,6 +42,6 @@ export const boxVariants = {
         black: "bg-slate-900 text-white",
         red: "bg-red-400 text-neutral-900",
         blue: "bg-blue-400 text-blue-900",
-        green: "bg-green-400 text-green-900"
-    }
+        green: "bg-green-400 text-green-900",
+    },
 };

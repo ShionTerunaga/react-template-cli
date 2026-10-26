@@ -1,5 +1,5 @@
-import { createHttpScheme, type HttpCustomStatus } from "./http-scheme";
-import type { CustomError } from "../core/core-error";
+import { createHttpScheme, type HttpCustomStatus } from './http-scheme';
+import type { CustomError } from '../core/core-error';
 
 export interface HttpError extends CustomError {
     status: HttpCustomStatus;
@@ -11,44 +11,43 @@ export const createHttpError = (function () {
 
     const createHttpError = ({
         status,
-        message
+        message,
     }: {
         status: HttpCustomStatus;
         message: string;
     }): HttpError => {
         return {
-            type: "httpError",
+            type: 'httpError',
             status,
-            message
+            message,
         };
     };
 
     const returnNotFoundAPIUrl = (function () {
         return createHttpError({
             status: httpErrorScheme.httpCustomStatusScheme.returnNotFoundAPIUrl,
-            message: httpErrorScheme.httpErrorMessage.returnNotFoundAPIUrl
+            message: httpErrorScheme.httpErrorMessage.returnNotFoundAPIUrl,
         });
     })();
 
     const returnNoPermission = (function () {
         return createHttpError({
             status: httpErrorScheme.httpCustomStatusScheme.returnNoPermission,
-            message: httpErrorScheme.httpErrorMessage.returnNoPermission
+            message: httpErrorScheme.httpErrorMessage.returnNoPermission,
         });
     })();
 
     const returnBadRequest = (function () {
         return createHttpError({
             status: httpErrorScheme.httpCustomStatusScheme.returnBadRequest,
-            message: httpErrorScheme.httpErrorMessage.returnBadRequest
+            message: httpErrorScheme.httpErrorMessage.returnBadRequest,
         });
     })();
 
     const returnInternalServerError = (function () {
         return createHttpError({
-            status: httpErrorScheme.httpCustomStatusScheme
-                .returnInternalServerError,
-            message: httpErrorScheme.httpErrorMessage.returnInternalServerError
+            status: httpErrorScheme.httpCustomStatusScheme.returnInternalServerError,
+            message: httpErrorScheme.httpErrorMessage.returnInternalServerError,
         });
     })();
 
@@ -56,6 +55,6 @@ export const createHttpError = (function () {
         returnInternalServerError,
         returnNotFoundAPIUrl,
         returnNoPermission,
-        returnBadRequest
+        returnBadRequest,
     };
 })();

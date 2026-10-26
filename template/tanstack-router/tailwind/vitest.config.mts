@@ -6,14 +6,14 @@ export default defineConfig({
     plugins: [
         tsconfigPaths({
             projects: ["./tsconfig.json"],
-            ignoreConfigErrors: true
+            ignoreConfigErrors: true,
         }),
-        react()
+        react(),
     ],
     test: {
         environment: "jsdom",
         coverage: {
-            provider: "v8"
-        }
-    }
+            provider: "v8",
+        },
+    },
 });

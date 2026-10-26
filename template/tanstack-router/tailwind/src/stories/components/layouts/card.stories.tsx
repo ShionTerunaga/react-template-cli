@@ -5,8 +5,8 @@ const meta = {
     title: "layouts/card",
     component: Card,
     parameters: {
-        layout: "fullscreen"
-    }
+        layout: "fullscreen",
+    },
 } satisfies Meta<typeof Card>;
 
 export default meta;
@@ -20,8 +20,8 @@ export const Sample1: Story = {
         alt: "",
         boxHeight: 250,
         srcWidth: 150,
-        srcHeight: 150
-    }
+        srcHeight: 150,
+    },
 };
 
 export const Sample2: Story = {
@@ -32,6 +32,6 @@ export const Sample2: Story = {
         alt: "",
         boxHeight: 400,
         srcWidth: 300,
-        srcHeight: 250
-    }
+        srcHeight: 250,
+    },
 };

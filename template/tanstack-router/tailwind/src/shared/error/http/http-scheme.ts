@@ -45,14 +45,14 @@ export const createHttpScheme: HttpErrorScheme = (function () {
         notFound: 404,
         internalServerError: 500,
         forbidden: 403,
-        badRequest: 400
+        badRequest: 400,
     };
     /**API仕様で変更 */
     const httpCustomStatusScheme: HttpCustomStatusScheme = {
         returnNotFoundAPIUrl: 4041,
         returnNoPermission: 4031,
         returnBadRequest: 4001,
-        returnInternalServerError: 5001
+        returnInternalServerError: 5001,
     };
 
     /**API仕様や画面仕様で変更 */
@@ -60,12 +60,12 @@ export const createHttpScheme: HttpErrorScheme = (function () {
         returnNotFoundAPIUrl: "APIのURLが見つかりません",
         returnNoPermission: "権限がありません",
         returnBadRequest: "不正なリクエストです",
-        returnInternalServerError: "サーバーエラーです"
+        returnInternalServerError: "サーバーエラーです",
     };
 
     return {
         httpErrorStatusResponse: httpErrorStatusResponse,
         httpCustomStatusScheme: httpCustomStatusScheme,
-        httpErrorMessage: httpErrorMessage
+        httpErrorMessage: httpErrorMessage,
     };
 })();

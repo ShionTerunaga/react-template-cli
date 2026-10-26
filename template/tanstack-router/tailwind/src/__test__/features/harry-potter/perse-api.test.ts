@@ -21,7 +21,7 @@ const mockApiData: APIRes = [
         wand: {
             wood: "holly",
             core: "phoenix feather",
-            length: 11
+            length: 11,
         },
         patronus: "stag",
         hogwartsStudent: true,
@@ -29,7 +29,7 @@ const mockApiData: APIRes = [
         actor: "Daniel Radcliffe",
         alternate_actors: [],
         alive: true,
-        image: "https://hp-api/image.jpg"
+        image: "https://hp-api/image.jpg",
     },
     {
         id: "2",
@@ -47,7 +47,7 @@ const mockApiData: APIRes = [
         wand: {
             wood: "",
             core: "",
-            length: null
+            length: null,
         },
         patronus: "",
         hogwartsStudent: false,
@@ -55,8 +55,8 @@ const mockApiData: APIRes = [
         actor: "",
         alternate_actors: [],
         alive: false,
-        image: ""
-    }
+        image: "",
+    },
 ];
 
 describe("perseApi", () => {
@@ -87,10 +87,10 @@ describe("perseApi", () => {
                 yearOfBirth: null,
                 wand: {
                     ...mockApiData[0].wand,
-                    length: null
+                    length: null,
                 },
-                image: "https://someimage.jpg"
-            }
+                image: "https://someimage.jpg",
+            },
         ];
 
         const result = parseApi(dataWithNulls);
@@ -111,7 +111,7 @@ describe("perseApi", () => {
     it("imageが空文字の時は要素が省かれる", () => {
         const dataWithNoImages: APIRes = mockApiData.map((item) => ({
             ...item,
-            image: ""
+            image: "",
         }));
 
         const result = parseApi(dataWithNoImages);

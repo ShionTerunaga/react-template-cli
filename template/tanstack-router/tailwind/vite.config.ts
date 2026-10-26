@@ -10,14 +10,14 @@ export default defineConfig({
     plugins: [
         tanstackRouter({
             target: "react",
-            autoCodeSplitting: true
+            autoCodeSplitting: true,
         }),
         viteReact(),
-        tailwindcss()
+        tailwindcss(),
     ],
     resolve: {
         alias: {
-            "@": fileURLToPath(new URL("./src", import.meta.url))
-        }
-    }
+            "@": fileURLToPath(new URL("./src", import.meta.url)),
+        },
+    },
 });

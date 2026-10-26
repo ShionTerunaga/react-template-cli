@@ -2,7 +2,7 @@ import { Box } from "@/lib/ui";
 
 const meta = {
     title: "components/ui/box",
-    component: Box
+    component: Box,
 };
 
 export default meta;
@@ -13,8 +13,8 @@ export const Default = {
         boxShadow: "small",
         color: "white",
         borderRadius: "middle",
-        children: <div className="p-5">Default box</div>
-    }
+        children: <div className="p-5">Default box</div>,
+    },
 };
 
 export const AccentCard = {
@@ -25,6 +25,6 @@ export const AccentCard = {
         color: "blue",
         border: "thin",
         borderRadius: "big",
-        children: <div className="p-6">Accent card</div>
-    }
+        children: <div className="p-6">Accent card</div>,
+    },
 };

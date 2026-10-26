@@ -17,7 +17,7 @@ interface HeadingStyle {
 interface HeadingProps extends HeadingStyle, ChildrenOnly {}
 
 export function Heading<T extends HeadingProps>(
-    props: CheckerProps<T, HeadingProps, "Heading Props Error">
+    props: CheckerProps<T, HeadingProps, "Heading Props Error">,
 ) {
     const {
         as = "h1",
@@ -25,19 +25,19 @@ export function Heading<T extends HeadingProps>(
         color = "textNormal",
         style,
         className,
-        children
+        children,
     } = props;
 
     const cn = classMerger([
         headingFontStyle[fontStyle],
         textColor[color],
-        className ? className : ""
+        className ? className : "",
     ]);
 
     const componentProps = {
         className: cn,
         style,
-        children
+        children,
     };
 
     const Components = as;

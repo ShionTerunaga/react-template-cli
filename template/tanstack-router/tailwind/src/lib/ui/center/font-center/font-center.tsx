@@ -10,7 +10,7 @@ interface Props extends ChildrenOnly {
 }
 
 export function FontCenter<T extends Props>(
-    props: CheckerProps<T, Props, "fontCenter has not any props.">
+    props: CheckerProps<T, Props, "fontCenter has not any props.">,
 ) {
     const { as = "p", className, style, children } = props;
 
@@ -21,7 +21,7 @@ export function FontCenter<T extends Props>(
     const asProps = {
         className: cn,
         style,
-        children
+        children,
     };
 
     return <Component {...asProps} />;

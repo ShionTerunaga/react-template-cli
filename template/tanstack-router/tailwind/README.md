@@ -107,7 +107,7 @@ export const Route = createRootRoute({
             <Outlet />
             <TanStackRouterDevtools />
         </>
-    )
+    ),
 });
 ```
 
@@ -147,7 +147,7 @@ const peopleRoute = createRoute({
                 ))}
             </ul>
         );
-    }
+    },
 });
 ```
 
@@ -184,7 +184,7 @@ if (!rootElement.innerHTML) {
     root.render(
         <QueryClientProvider client={queryClient}>
             <RouterProvider router={router} />
-        </QueryClientProvider>
+        </QueryClientProvider>,
     );
 }
 ```
@@ -201,7 +201,7 @@ const rootRoute = createRootRoute({
             <ReactQueryDevtools buttonPosition="top-right" />
             <TanStackRouterDevtools />
         </>
-    )
+    ),
 });
 ```
 
@@ -219,7 +219,7 @@ function App() {
             fetch("https://swapi.dev/api/people")
                 .then((res) => res.json())
                 .then((data) => data.results as { name: string }[]),
-        initialData: []
+        initialData: [],
     });
 
     return (
@@ -264,9 +264,7 @@ function App() {
     const count = useStore(countStore);
     return (
         <div>
-            <button onClick={() => countStore.setState((n) => n + 1)}>
-                Increment - {count}
-            </button>
+            <button onClick={() => countStore.setState((n) => n + 1)}>Increment - {count}</button>
         </div>
     );
 }
@@ -288,7 +286,7 @@ const countStore = new Store(0);
 
 const doubledStore = new Derived({
     fn: () => countStore.state * 2,
-    deps: [countStore]
+    deps: [countStore],
 });
 doubledStore.mount();
 
@@ -298,9 +296,7 @@ function App() {
 
     return (
         <div>
-            <button onClick={() => countStore.setState((n) => n + 1)}>
-                Increment - {count}
-            </button>
+            <button onClick={() => countStore.setState((n) => n + 1)}>Increment - {count}</button>
             <div>Doubled - {doubledCount}</div>
         </div>
     );

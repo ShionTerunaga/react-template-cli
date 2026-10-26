@@ -4,8 +4,8 @@ const meta = {
     title: "components/ui/grid-box",
     component: GridBox,
     parameters: {
-        layout: "fullscreen"
-    }
+        layout: "fullscreen",
+    },
 };
 export default meta;
 
@@ -23,14 +23,14 @@ export const ThreeColumns = {
     args: {
         gap: "large",
         gridTemplateColumns: "three",
-        children: items
-    }
+        children: items,
+    },
 };
 
 export const FourColumns = {
     args: {
         gap: "medium",
         gridTemplateColumns: "four",
-        children: items
-    }
+        children: items,
+    },
 };

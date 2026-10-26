@@ -21,7 +21,7 @@ const mockAPIData: APIRes = [
         wand: {
             wood: "holly",
             core: "phoenix feather",
-            length: 11
+            length: 11,
         },
         patronus: "stag",
         hogwartsStudent: true,
@@ -29,8 +29,8 @@ const mockAPIData: APIRes = [
         actor: "Daniel Radcliffe",
         alternate_actors: [],
         alive: true,
-        image: "https://hp-api/image.jpg"
-    }
+        image: "https://hp-api/image.jpg",
+    },
 ];
 
 const mockFetch = vi.fn();
@@ -55,15 +55,15 @@ describe("getCharacter", () => {
 
     it("レスポンスがerrorの場合", async () => {
         vi.spyOn(appConfig, "apiKey", "get").mockReturnValue(
-            createSome("https://mock-api.com/characters")
+            createSome("https://mock-api.com/characters"),
         );
 
         mockFetch.mockResolvedValue({
             ok: false,
             status: 500,
             json: async () => ({
-                message: "mock error"
-            })
+                message: "mock error",
+            }),
         });
 
         const result = await getCharacter();
@@ -76,15 +76,15 @@ describe("getCharacter", () => {
 
     it("レスポンスがerrorでstatusコードが設定していないものが来た場合", async () => {
         vi.spyOn(appConfig, "apiKey", "get").mockReturnValue(
-            createSome("https://mock-api.com/characters")
+            createSome("https://mock-api.com/characters"),
         );
 
         mockFetch.mockResolvedValue({
             ok: false,
             status: 300,
             json: async () => ({
-                message: "mock error"
-            })
+                message: "mock error",
+            }),
         });
 
         const result = await getCharacter();
@@ -97,12 +97,12 @@ describe("getCharacter", () => {
 
     it("スキームが合わない場合", async () => {
         vi.spyOn(appConfig, "apiKey", "get").mockReturnValue(
-            createSome("https://mock-api.com/characters")
+            createSome("https://mock-api.com/characters"),
         );
 
         mockFetch.mockResolvedValue({
             ok: true,
-            json: async () => [{ ...mockAPIData[0], wand: null }]
+            json: async () => [{ ...mockAPIData[0], wand: null }],
         });
 
         const result = await getCharacter();
@@ -115,12 +115,12 @@ describe("getCharacter", () => {
 
     it("should return parsed characters when valid data is provided", async () => {
         vi.spyOn(appConfig, "apiKey", "get").mockReturnValue(
-            createSome("https://mock-api.com/characters")
+            createSome("https://mock-api.com/characters"),
         );
 
         mockFetch.mockResolvedValue({
             ok: true,
-            json: async () => mockAPIData
+            json: async () => mockAPIData,
         });
 
         const result = await getCharacter();

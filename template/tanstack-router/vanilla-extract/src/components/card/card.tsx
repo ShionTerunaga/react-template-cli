@@ -1,7 +1,7 @@
-import { Box } from "@/lib/ui";
-import type { CheckerProps } from "@/shared/types/object";
-import type { CSSProperties } from "react";
-import cardStyles from "./card.css";
+import { Box } from '@/lib/ui';
+import type { CheckerProps } from '@/shared/types/object';
+import type { CSSProperties } from 'react';
+import cardStyles from './card.css';
 
 interface Props {
     key: number | string;
@@ -13,14 +13,12 @@ interface Props {
     srcHeight: number;
 }
 
-export function Card<T extends Props>(
-    props: CheckerProps<T, Props, "different card props">
-) {
+export function Card<T extends Props>(props: CheckerProps<T, Props, 'different card props'>) {
     const { title, src, alt, srcWidth, srcHeight, boxHeight } = props;
 
     const cardStyle: CSSProperties = {
         width: srcWidth,
-        height: boxHeight
+        height: boxHeight,
     };
 
     return (

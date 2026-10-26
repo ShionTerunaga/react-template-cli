@@ -15,12 +15,12 @@ import { Route as IndexRouteImport } from "./routes/index";
 const SingleDynamicFetchRoute = SingleDynamicFetchRouteImport.update({
     id: "/single-dynamic-fetch",
     path: "/single-dynamic-fetch",
-    getParentRoute: () => rootRouteImport
+    getParentRoute: () => rootRouteImport,
 } as any);
 const IndexRoute = IndexRouteImport.update({
     id: "/",
     path: "/",
-    getParentRoute: () => rootRouteImport
+    getParentRoute: () => rootRouteImport,
 } as any);
 
 export interface FileRoutesByFullPath {
@@ -70,7 +70,7 @@ declare module "@tanstack/react-router" {
 
 const rootRouteChildren: RootRouteChildren = {
     IndexRoute: IndexRoute,
-    SingleDynamicFetchRoute: SingleDynamicFetchRoute
+    SingleDynamicFetchRoute: SingleDynamicFetchRoute,
 };
 export const routeTree = rootRouteImport
     ._addFileChildren(rootRouteChildren)

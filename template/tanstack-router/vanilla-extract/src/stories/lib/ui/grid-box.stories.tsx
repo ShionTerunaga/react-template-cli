@@ -1,11 +1,11 @@
-import { GridBox } from "@/lib/ui";
+import { GridBox } from '@/lib/ui';
 
 const meta = {
-    title: "lib/ui/grid-box",
+    title: 'lib/ui/grid-box',
     component: GridBox,
     parameters: {
-        layout: "fullscreen"
-    }
+        layout: 'fullscreen',
+    },
 };
 
 export default meta;
@@ -14,50 +14,50 @@ const items = (
     <>
         <div
             style={{
-                width: "100%",
+                width: '100%',
                 borderRadius: 12,
-                background: "#f1f5f9",
-                padding: 16
+                background: '#f1f5f9',
+                padding: 16,
             }}
         >
             Item 1
         </div>
         <div
             style={{
-                width: "100%",
+                width: '100%',
                 borderRadius: 12,
-                background: "#e2e8f0",
-                padding: 16
+                background: '#e2e8f0',
+                padding: 16,
             }}
         >
             Item 2
         </div>
         <div
             style={{
-                width: "100%",
+                width: '100%',
                 borderRadius: 12,
-                background: "#f1f5f9",
-                padding: 16
+                background: '#f1f5f9',
+                padding: 16,
             }}
         >
             Item 3
         </div>
         <div
             style={{
-                width: "100%",
+                width: '100%',
                 borderRadius: 12,
-                background: "#e2e8f0",
-                padding: 16
+                background: '#e2e8f0',
+                padding: 16,
             }}
         >
             Item 4
         </div>
         <div
             style={{
-                width: "100%",
+                width: '100%',
                 borderRadius: 12,
-                background: "#f1f5f9",
-                padding: 16
+                background: '#f1f5f9',
+                padding: 16,
             }}
         >
             Item 5
@@ -67,16 +67,16 @@ const items = (
 
 export const ThreeColumns = {
     args: {
-        gap: "large",
-        gridTemplateColumns: "three",
-        children: items
-    }
+        gap: 'large',
+        gridTemplateColumns: 'three',
+        children: items,
+    },
 };
 
 export const FiveColumns = {
     args: {
-        gap: "medium",
-        gridTemplateColumns: "five",
-        children: items
-    }
+        gap: 'medium',
+        gridTemplateColumns: 'five',
+        children: items,
+    },
 };

@@ -1,11 +1,11 @@
-import type { Option } from "ts-utility-kit/option";
+import type { Option } from 'ts-utility-kit/option';
 
 export interface APIView {
     id: string;
     name: string;
     alternateNames: Array<string>;
     species: string;
-    gender: "male" | "female" | "";
+    gender: 'male' | 'female' | '';
     house: string;
     dateOfBirth: Option<string>;
     yearOfBirth: Option<number>;

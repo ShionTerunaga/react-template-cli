@@ -3,7 +3,7 @@ import {
     type HttpCustomStatus,
     type HttpCustomStatusScheme,
     type HttpErrorStatusErrorMessage,
-    type HttpErrorStatusResponse
+    type HttpErrorStatusResponse,
 } from "../http/http-scheme";
 
 export interface FetcherErrorStatusScheme extends HttpCustomStatusScheme {
@@ -37,11 +37,7 @@ export interface FetchErrorScheme {
 }
 
 export const fetcherErrorScheme: FetchErrorScheme = (function () {
-    const {
-        httpCustomStatusScheme,
-        httpErrorStatusResponse,
-        httpErrorMessage
-    } = createHttpScheme;
+    const { httpCustomStatusScheme, httpErrorStatusResponse, httpErrorMessage } = createHttpScheme;
 
     /**API仕様で変更 */
     const fetcherErrorStatusScheme: FetcherErrorStatusScheme = {
@@ -50,7 +46,7 @@ export const fetcherErrorScheme: FetchErrorScheme = (function () {
         returnSchemeError: 5000,
         returnParseError: 8000,
         returnFetchFunctionError: 9000,
-        returnUnknownError: 9999
+        returnUnknownError: 9999,
     };
 
     /**API仕様や画面仕様で変更 */
@@ -60,11 +56,11 @@ export const fetcherErrorScheme: FetchErrorScheme = (function () {
         returnSchemeError: "スキームエラーが発生しました",
         returnParseError: "データのパースに失敗しました",
         returnFetchFunctionError: "フェッチ関数でエラーが発生しました",
-        returnUnknownError: "不明なエラーが発生しました"
+        returnUnknownError: "不明なエラーが発生しました",
     };
     return {
         httpErrorStatusResponse,
         fetcherErrorStatusScheme,
-        fetchErrorMessage
+        fetchErrorMessage,
     };
 })();

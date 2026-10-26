@@ -7,7 +7,7 @@ import { type FetcherError } from "@/shared/error/fetcher";
 export async function hasNoParseFetcher<T extends v.GenericSchema>({
     url,
     scheme,
-    cache
+    cache,
 }: {
     url: Option<string>;
     scheme: T;
@@ -16,6 +16,6 @@ export async function hasNoParseFetcher<T extends v.GenericSchema>({
     return await fetcher<T>({
         url,
         scheme,
-        cache
+        cache,
     });
 }

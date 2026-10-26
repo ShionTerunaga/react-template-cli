@@ -8,7 +8,7 @@ export async function hasParseFetcher<T extends v.GenericSchema, S>({
     url,
     scheme,
     cache,
-    parse
+    parse,
 }: {
     url: Option<string>;
     scheme: T;
@@ -18,7 +18,7 @@ export async function hasParseFetcher<T extends v.GenericSchema, S>({
     const fetcherResult = await fetcher<T>({
         url,
         scheme,
-        cache
+        cache,
     });
 
     if (isErr(fetcherResult)) {

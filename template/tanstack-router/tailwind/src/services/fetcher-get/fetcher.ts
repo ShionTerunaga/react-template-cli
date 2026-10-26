@@ -1,10 +1,5 @@
 import * as v from "valibot";
-import {
-    checkPromiseReturn,
-    createErr,
-    createOk,
-    isErr
-} from "ts-utility-kit/result";
+import { checkPromiseReturn, createErr, createOk, isErr } from "ts-utility-kit/result";
 import { createNone, createSome, isNone } from "ts-utility-kit/option";
 import type { Option } from "ts-utility-kit/option";
 import type { Result } from "ts-utility-kit/result";
@@ -15,7 +10,7 @@ import { createHttpScheme } from "@/shared/error/http";
 export async function fetcher<T extends v.GenericSchema>({
     url,
     scheme,
-    cache
+    cache,
 }: {
     url: Option<string>;
     scheme: T;
@@ -32,7 +27,7 @@ export async function fetcher<T extends v.GenericSchema>({
         returnSchemeError,
         returnUnknownError,
         returnFetchFunctionError,
-        returnInternalServerError
+        returnInternalServerError,
     } = createFetcherError;
 
     if (isNone(url)) {
@@ -44,7 +39,7 @@ export async function fetcher<T extends v.GenericSchema>({
         err: (e) => {
             console.error(e);
             return createErr(returnFetchFunctionError);
-        }
+        },
     });
 
     if (isErr(res)) {

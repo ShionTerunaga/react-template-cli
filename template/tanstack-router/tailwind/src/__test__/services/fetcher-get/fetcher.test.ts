@@ -15,7 +15,7 @@ describe("fetcher", () => {
     it("returns ng when url is none", async () => {
         const result = await fetcher({
             url: createNone(),
-            scheme: v.object({})
+            scheme: v.object({}),
         });
 
         assert(isErr(result));
@@ -27,12 +27,12 @@ describe("fetcher", () => {
         mockFetch.mockResolvedValue({
             ok: false,
             status: 500,
-            json: async () => ({})
+            json: async () => ({}),
         });
 
         const result = await fetcher({
             url: createSome("https://example.com"),
-            scheme: v.object({})
+            scheme: v.object({}),
         });
 
         assert(isErr(result));
@@ -44,14 +44,14 @@ describe("fetcher", () => {
         mockFetch.mockResolvedValue({
             ok: true,
             status: 200,
-            json: async () => ({ foo: 1 })
+            json: async () => ({ foo: 1 }),
         });
 
         const schema = v.object({ bar: v.string() });
 
         const result = await fetcher({
             url: createSome("https://example.com"),
-            scheme: schema
+            scheme: schema,
         });
 
         assert(isErr(result));
@@ -64,14 +64,14 @@ describe("fetcher", () => {
         mockFetch.mockResolvedValue({
             ok: true,
             status: 200,
-            json: async () => body
+            json: async () => body,
         });
 
         const schema = v.object({ bar: v.string() });
 
         const result = await fetcher({
             url: createSome("https://example.com"),
-            scheme: schema
+            scheme: schema,
         });
 
         assert(isOk(result));

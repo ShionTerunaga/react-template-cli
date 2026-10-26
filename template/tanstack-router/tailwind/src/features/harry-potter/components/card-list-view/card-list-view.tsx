@@ -10,7 +10,7 @@ interface Props {
 }
 
 export function CardListView<T extends Props>(
-    props: CheckerProps<T, Props, "Cache potter layout has not any props.">
+    props: CheckerProps<T, Props, "Cache potter layout has not any props.">,
 ) {
     const { potters, title } = props;
 
@@ -22,7 +22,7 @@ export function CardListView<T extends Props>(
                 "px-6",
                 "pb-20",
                 "pt-14",
-                "bg-[linear-gradient(160deg,#e2e8f0_0%,#f8fafc_25%,#f1f5f9_70%,#dbeafe_100%)]"
+                "bg-[linear-gradient(160deg,#e2e8f0_0%,#f8fafc_25%,#f1f5f9_70%,#dbeafe_100%)]",
             ])}
         >
             <Box
@@ -36,13 +36,11 @@ export function CardListView<T extends Props>(
                     "bg-white/[0.66]",
                     "px-4",
                     "pb-8",
-                    "pt-6"
+                    "pt-6",
                 ])}
             >
                 <FontCenter className="mb-[28px]" as="div">
-                    <Heading className={classMerger(["tracking-[-0.02em]"])}>
-                        {title}
-                    </Heading>
+                    <Heading className={classMerger(["tracking-[-0.02em]"])}>{title}</Heading>
                 </FontCenter>
 
                 <GridBox>

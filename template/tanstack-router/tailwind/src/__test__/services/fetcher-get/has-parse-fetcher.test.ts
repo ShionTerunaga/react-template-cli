@@ -16,7 +16,7 @@ describe("hasParseFetcher", () => {
         mockFetch.mockResolvedValue({
             ok: false,
             status: 500,
-            json: async () => ({})
+            json: async () => ({}),
         });
 
         const schema = v.object({});
@@ -24,7 +24,7 @@ describe("hasParseFetcher", () => {
         const result = await hasParseFetcher({
             url: createSome("https://example.com"),
             scheme: schema,
-            parse: () => createOk(createSome("ok"))
+            parse: () => createOk(createSome("ok")),
         });
 
         assert(isErr(result));
@@ -37,7 +37,7 @@ describe("hasParseFetcher", () => {
         mockFetch.mockResolvedValue({
             ok: true,
             status: 200,
-            json: async () => payload
+            json: async () => payload,
         });
 
         const schema = v.object({ a: v.number() });
@@ -45,7 +45,7 @@ describe("hasParseFetcher", () => {
         const result = await hasParseFetcher({
             url: createSome("https://example.com"),
             scheme: schema,
-            parse: () => createOk(createSome("parsed"))
+            parse: () => createOk(createSome("parsed")),
         });
 
         assert(isOk(result));

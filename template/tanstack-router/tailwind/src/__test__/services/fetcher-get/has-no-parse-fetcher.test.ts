@@ -16,14 +16,14 @@ describe("hasNoParseFetcher", () => {
         mockFetch.mockResolvedValue({
             ok: true,
             status: 200,
-            json: async () => ({ x: 1 })
+            json: async () => ({ x: 1 }),
         });
 
         const schema = v.object({ y: v.string() });
 
         const result = await hasNoParseFetcher({
             url: createSome("https://example.com"),
-            scheme: schema
+            scheme: schema,
         });
 
         assert(isErr(result));
@@ -36,14 +36,14 @@ describe("hasNoParseFetcher", () => {
         mockFetch.mockResolvedValue({
             ok: true,
             status: 200,
-            json: async () => payload
+            json: async () => payload,
         });
 
         const schema = v.object({ y: v.string() });
 
         const result = await hasNoParseFetcher({
             url: createSome("https://example.com"),
-            scheme: schema
+            scheme: schema,
         });
 
         assert(isOk(result));
