@@ -1,4 +1,4 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style, styleVariants } from "@vanilla-extract/css";
 
 //本来プロジェクトでgapのパターンがいくつかあったら定義する
 export const gridBoxGap = styleVariants({
@@ -15,27 +15,27 @@ export const gridBoxGap = styleVariants({
 
 export const gridBoxGridTemplate = styleVariants({
     three: {
-        gridTemplateColumns: 'repeat(3, 1fr)',
+        gridTemplateColumns: "repeat(3, 1fr)",
     },
     four: {
-        gridTemplateColumns: 'repeat(4, 1fr)',
+        gridTemplateColumns: "repeat(4, 1fr)",
     },
     five: {
-        gridTemplateColumns: 'repeat(5, 1fr)',
+        gridTemplateColumns: "repeat(5, 1fr)",
     },
 });
 
 export const gridBoxBaseStyles = style({
-    display: 'grid',
-    justifyItems: 'center',
-    alignItems: 'start',
-    width: '100%',
-    '@media': {
-        'screen and (max-width: 980px)': {
-            gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+    display: "grid",
+    justifyItems: "center",
+    alignItems: "start",
+    width: "100%",
+    "@media": {
+        "screen and (max-width: 980px)": {
+            gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
         },
-        'screen and (max-width: 640px)': {
-            gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+        "screen and (max-width: 640px)": {
+            gridTemplateColumns: "repeat(1, minmax(0, 1fr))",
         },
     },
 });

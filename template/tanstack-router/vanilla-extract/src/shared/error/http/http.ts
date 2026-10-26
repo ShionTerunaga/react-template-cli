@@ -1,5 +1,5 @@
-import { createHttpScheme, type HttpCustomStatus } from './http-scheme';
-import type { CustomError } from '../core/core-error';
+import { createHttpScheme, type HttpCustomStatus } from "./http-scheme";
+import type { CustomError } from "../core/core-error";
 
 export interface HttpError extends CustomError {
     status: HttpCustomStatus;
@@ -17,7 +17,7 @@ export const createHttpError = (function () {
         message: string;
     }): HttpError => {
         return {
-            type: 'httpError',
+            type: "httpError",
             status,
             message,
         };

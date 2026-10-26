@@ -1,5 +1,5 @@
-import { styleVariants } from '@vanilla-extract/css';
-import { appTheme } from './theme';
+import { styleVariants } from "@vanilla-extract/css";
+import { appTheme } from "./theme";
 
 export const textColor = styleVariants({
     textNormal: { color: appTheme.textNormal },

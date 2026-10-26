@@ -1,7 +1,7 @@
-import { FontCenter } from '@/lib/ui';
+import { FontCenter } from "@/lib/ui";
 
 const meta = {
-    title: 'lib/ui/font-center',
+    title: "lib/ui/font-center",
     component: FontCenter,
 };
 
@@ -16,7 +16,7 @@ export const Default = {
 export const Callout = {
     args: {
         style: {
-            backgroundColor: '#f8fafc',
+            backgroundColor: "#f8fafc",
             borderRadius: 16,
             padding: 32,
         },

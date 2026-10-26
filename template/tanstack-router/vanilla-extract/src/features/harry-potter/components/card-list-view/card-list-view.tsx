@@ -1,8 +1,8 @@
-import { Card } from '@/components/card';
-import { Box, FontCenter, GridBox, Heading } from '@/lib/ui';
-import type { SinglePageGetCharacters } from '@/features/harry-potter';
-import type { CheckerProps } from '@/shared/types/object';
-import cardListViewStyle from './card-list-view.css';
+import { Card } from "@/components/card";
+import { Box, FontCenter, GridBox, Heading } from "@/lib/ui";
+import type { SinglePageGetCharacters } from "@/features/harry-potter";
+import type { CheckerProps } from "@/shared/types/object";
+import cardListViewStyle from "./card-list-view.css";
 
 interface Props<T extends SinglePageGetCharacters> {
     potters: Array<T>;
@@ -10,7 +10,7 @@ interface Props<T extends SinglePageGetCharacters> {
 }
 
 export function CardListView<T extends SinglePageGetCharacters, S extends Props<T>>(
-    props: CheckerProps<S, Props<T>, 'Cache potter layout has not any props.'>,
+    props: CheckerProps<S, Props<T>, "Cache potter layout has not any props.">,
 ) {
     const { potters, title } = props;
 

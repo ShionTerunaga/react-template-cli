@@ -1,21 +1,21 @@
-import { type CheckerProps } from '@/shared/types/object';
-import { type ChildrenOnly } from '@/shared/types/react';
-import { type CSSProperties } from 'react';
-import fontCenterBaseStyle from './font-center.css';
-import { classMerger } from 'ts-utility-kit/merger';
+import { type CheckerProps } from "@/shared/types/object";
+import { type ChildrenOnly } from "@/shared/types/react";
+import { type CSSProperties } from "react";
+import fontCenterBaseStyle from "./font-center.css";
+import { classMerger } from "ts-utility-kit/merger";
 
 interface Props extends ChildrenOnly {
-    as?: Extract<React.ElementType, 'p' | 'span' | 'div' | 'section' | 'article' | 'main'>;
+    as?: Extract<React.ElementType, "p" | "span" | "div" | "section" | "article" | "main">;
     className?: string;
-    style?: Omit<CSSProperties, 'center'>;
+    style?: Omit<CSSProperties, "center">;
 }
 
 export function FontCenter<T extends Props>(
-    props: CheckerProps<T, Props, 'fontCenter has not any props.'>,
+    props: CheckerProps<T, Props, "fontCenter has not any props.">,
 ) {
-    const { as = 'p', className, style, children } = props;
+    const { as = "p", className, style, children } = props;
 
-    const classNames = classMerger([fontCenterBaseStyle, className ?? '']);
+    const classNames = classMerger([fontCenterBaseStyle, className ?? ""]);
 
     const Component = as;
 

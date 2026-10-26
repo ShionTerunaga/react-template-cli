@@ -1,11 +1,11 @@
-import type { Property } from 'csstype';
+import type { Property } from "csstype";
 
 export const appTheme = {
-    textNormal: '#333',
-    white: '#FFFFFF',
-    likeBlue: 'aqua',
-    likeGreen: '#33FFCC',
-    popupBackground: 'rgba(0,0,0,0.6)',
+    textNormal: "#333",
+    white: "#FFFFFF",
+    likeBlue: "aqua",
+    likeGreen: "#33FFCC",
+    popupBackground: "rgba(0,0,0,0.6)",
 };
 
 export type Color =

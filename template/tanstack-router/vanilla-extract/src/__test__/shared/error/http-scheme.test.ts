@@ -1,8 +1,8 @@
-import { createHttpScheme } from '@/shared/error/http/http-scheme';
-import { describe, expect, it } from 'vitest';
+import { createHttpScheme } from "@/shared/error/http/http-scheme";
+import { describe, expect, it } from "vitest";
 
-describe('http-scheme', () => {
-    it('createHttpSchemeにおいてhttpErrorStatusResponseの正常な値が返ってくる', () => {
+describe("http-scheme", () => {
+    it("createHttpSchemeにおいてhttpErrorStatusResponseの正常な値が返ってくる", () => {
         const httpErrorScheme = createHttpScheme;
 
         expect(httpErrorScheme.httpErrorStatusResponse.notFound).toEqual(404);
@@ -11,7 +11,7 @@ describe('http-scheme', () => {
         expect(httpErrorScheme.httpErrorStatusResponse.forbidden).toEqual(403);
     });
 
-    it('createHttpSchemeにおいてhttpCustomStatusScheme', () => {
+    it("createHttpSchemeにおいてhttpCustomStatusScheme", () => {
         const httpErrorScheme = createHttpScheme;
 
         expect(httpErrorScheme.httpCustomStatusScheme.returnNotFoundAPIUrl).toEqual(4041);
@@ -19,17 +19,17 @@ describe('http-scheme', () => {
         expect(httpErrorScheme.httpCustomStatusScheme.returnBadRequest).toEqual(4001);
     });
 
-    it('createHttpSchemeにおいてerrorMessage', () => {
+    it("createHttpSchemeにおいてerrorMessage", () => {
         const httpErrorScheme = createHttpScheme;
 
         expect(httpErrorScheme.httpErrorMessage.returnNotFoundAPIUrl).toEqual(
-            'APIのURLが見つかりません',
+            "APIのURLが見つかりません",
         );
-        expect(httpErrorScheme.httpErrorMessage.returnNoPermission).toEqual('権限がありません');
-        expect(httpErrorScheme.httpErrorMessage.returnBadRequest).toEqual('不正なリクエストです');
+        expect(httpErrorScheme.httpErrorMessage.returnNoPermission).toEqual("権限がありません");
+        expect(httpErrorScheme.httpErrorMessage.returnBadRequest).toEqual("不正なリクエストです");
 
         expect(httpErrorScheme.httpErrorMessage.returnInternalServerError).toEqual(
-            'サーバーエラーです',
+            "サーバーエラーです",
         );
     });
 });

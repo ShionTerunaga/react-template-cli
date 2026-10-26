@@ -22,16 +22,16 @@ export interface HttpErrorStatusErrorMessage {
  * 適宜必要なステータスを追加する
  */
 export type HttpStatus =
-    | HttpErrorStatusResponse['notFound']
-    | HttpErrorStatusResponse['internalServerError']
-    | HttpErrorStatusResponse['forbidden']
-    | HttpErrorStatusResponse['badRequest'];
+    | HttpErrorStatusResponse["notFound"]
+    | HttpErrorStatusResponse["internalServerError"]
+    | HttpErrorStatusResponse["forbidden"]
+    | HttpErrorStatusResponse["badRequest"];
 
 export type HttpCustomStatus =
-    | HttpCustomStatusScheme['returnNotFoundAPIUrl'] //httpからのレスポンスで404が返ってきた
-    | HttpCustomStatusScheme['returnNoPermission'] //権限がない
-    | HttpCustomStatusScheme['returnBadRequest'] //不正なリクエスト
-    | HttpCustomStatusScheme['returnInternalServerError']; // サーバーエラー
+    | HttpCustomStatusScheme["returnNotFoundAPIUrl"] //httpからのレスポンスで404が返ってきた
+    | HttpCustomStatusScheme["returnNoPermission"] //権限がない
+    | HttpCustomStatusScheme["returnBadRequest"] //不正なリクエスト
+    | HttpCustomStatusScheme["returnInternalServerError"]; // サーバーエラー
 
 export interface HttpErrorScheme {
     httpErrorStatusResponse: HttpErrorStatusResponse;
@@ -57,10 +57,10 @@ export const createHttpScheme: HttpErrorScheme = (function () {
 
     /**API仕様や画面仕様で変更 */
     const httpErrorMessage: HttpErrorStatusErrorMessage = {
-        returnNotFoundAPIUrl: 'APIのURLが見つかりません',
-        returnNoPermission: '権限がありません',
-        returnBadRequest: '不正なリクエストです',
-        returnInternalServerError: 'サーバーエラーです',
+        returnNotFoundAPIUrl: "APIのURLが見つかりません",
+        returnNoPermission: "権限がありません",
+        returnBadRequest: "不正なリクエストです",
+        returnInternalServerError: "サーバーエラーです",
     };
 
     return {

@@ -1,8 +1,8 @@
-import { Box } from '@/lib/ui';
-import { isSome } from 'ts-utility-kit/option';
-import { CardListView } from '@/features/harry-potter';
-import { useSinglePageCharacters } from '@/features/harry-potter';
-import { ja } from '@/shared/lang/ja';
+import { Box } from "@/lib/ui";
+import { isSome } from "ts-utility-kit/option";
+import { CardListView } from "@/features/harry-potter";
+import { useSinglePageCharacters } from "@/features/harry-potter";
+import { ja } from "@/shared/lang/ja";
 
 function SingleDynamicFetch() {
     const { characters, isLoading, error } = useSinglePageCharacters();

@@ -1,7 +1,7 @@
-import { Box, Heading } from '@/lib/ui';
-import { ja } from '@/shared/lang/ja';
-import { Link } from '@tanstack/react-router';
-import homePageStyle from './home.css';
+import { Box, Heading } from "@/lib/ui";
+import { ja } from "@/shared/lang/ja";
+import { Link } from "@tanstack/react-router";
+import homePageStyle from "./home.css";
 
 function HomeLayout() {
     return (

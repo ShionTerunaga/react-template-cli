@@ -1,10 +1,10 @@
-import { GridBox } from '@/lib/ui';
+import { GridBox } from "@/lib/ui";
 
 const meta = {
-    title: 'lib/ui/grid-box',
+    title: "lib/ui/grid-box",
     component: GridBox,
     parameters: {
-        layout: 'fullscreen',
+        layout: "fullscreen",
     },
 };
 
@@ -14,9 +14,9 @@ const items = (
     <>
         <div
             style={{
-                width: '100%',
+                width: "100%",
                 borderRadius: 12,
-                background: '#f1f5f9',
+                background: "#f1f5f9",
                 padding: 16,
             }}
         >
@@ -24,9 +24,9 @@ const items = (
         </div>
         <div
             style={{
-                width: '100%',
+                width: "100%",
                 borderRadius: 12,
-                background: '#e2e8f0',
+                background: "#e2e8f0",
                 padding: 16,
             }}
         >
@@ -34,9 +34,9 @@ const items = (
         </div>
         <div
             style={{
-                width: '100%',
+                width: "100%",
                 borderRadius: 12,
-                background: '#f1f5f9',
+                background: "#f1f5f9",
                 padding: 16,
             }}
         >
@@ -44,9 +44,9 @@ const items = (
         </div>
         <div
             style={{
-                width: '100%',
+                width: "100%",
                 borderRadius: 12,
-                background: '#e2e8f0',
+                background: "#e2e8f0",
                 padding: 16,
             }}
         >
@@ -54,9 +54,9 @@ const items = (
         </div>
         <div
             style={{
-                width: '100%',
+                width: "100%",
                 borderRadius: 12,
-                background: '#f1f5f9',
+                background: "#f1f5f9",
                 padding: 16,
             }}
         >
@@ -67,16 +67,16 @@ const items = (
 
 export const ThreeColumns = {
     args: {
-        gap: 'large',
-        gridTemplateColumns: 'three',
+        gap: "large",
+        gridTemplateColumns: "three",
         children: items,
     },
 };
 
 export const FiveColumns = {
     args: {
-        gap: 'medium',
-        gridTemplateColumns: 'five',
+        gap: "medium",
+        gridTemplateColumns: "five",
         children: items,
     },
 };
