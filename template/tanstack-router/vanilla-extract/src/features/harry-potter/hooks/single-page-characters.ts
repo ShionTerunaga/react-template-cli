@@ -18,29 +18,22 @@ export function useSinglePageCharacters() {
     const [error, setError] = useState<Option<FetcherError>>(createNone());
 
     useEffect(() => {
-        let isMounted = true;
+        getCharacter()
+            .then((result) => {
+                if (isErr(result)) {
+                    setError(createSome(result.err));
+                    return;
+                }
 
-        (async () => {
-            const result = await getCharacter();
+                if (isNone(result.value)) {
+                    return;
+                }
 
-            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-            if (!isMounted) return;
-
-            if (isErr(result)) {
-                setError(createSome(result.err));
-                return;
-            }
-
-            if (isNone(result.value)) {
-                return;
-            }
-
-            setFetchCharacter(createSome(result.value.value));
-        })();
-
-        return () => {
-            isMounted = false;
-        };
+                setFetchCharacter(createSome(result.value.value));
+            })
+            .catch((err) => {
+                setError(createSome(err));
+            });
     }, []);
 
     const isLoading: boolean = useMemo(() => {
