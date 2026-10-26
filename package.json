@@ -92,7 +92,7 @@
         "ts-loader": "^9.5.4",
         "tsconfig-paths": "^4.2.0",
         "typescript": "^7.0.2",
-        "vite": "^8.2.2"
+        "vite": "^8.2.4"
     },
     "preferGlobal": true,
     "engines": {
