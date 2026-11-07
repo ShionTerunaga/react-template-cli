@@ -1,3 +1,5 @@
+import { ja } from "@/shared/lang/ja";
+
 export interface HttpCustomStatusScheme {
     returnNotFoundAPIUrl: 4041;
     returnNoPermission: 4031;
@@ -57,10 +59,7 @@ export const createHttpScheme: HttpErrorScheme = (function () {
 
     /**API仕様や画面仕様で変更 */
     const httpErrorMessage: HttpErrorStatusErrorMessage = {
-        returnNotFoundAPIUrl: "APIのURLが見つかりません",
-        returnNoPermission: "権限がありません",
-        returnBadRequest: "不正なリクエストです",
-        returnInternalServerError: "サーバーエラーです",
+        ...ja.shared.error.http,
     };
 
     return {

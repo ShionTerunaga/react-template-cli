@@ -27,7 +27,8 @@ const templateEnvSchema = [
         ],
         variables: {
             API_KEY: "https://hp-api.onrender.com/api/characters",
-            API_KEY2: "https://dog.ceo/api/breeds/image/random"
+            API_KEY2: "https://dog.ceo/api/breeds/image/random",
+            POKEMON_API_URL: "https://pokeapi.co/api/v2/pokemon?limit=20"
         }
     },
     {
@@ -36,7 +37,9 @@ const templateEnvSchema = [
             ["next", "pages", "vanilla-extract"]
         ],
         variables: {
-            NEXT_PUBLIC_API_KEY: "https://hp-api.onrender.com/api/characters"
+            NEXT_PUBLIC_API_KEY: "https://hp-api.onrender.com/api/characters",
+            NEXT_PUBLIC_POKEMON_API_URL:
+                "https://pokeapi.co/api/v2/pokemon?limit=20"
         }
     },
     {
@@ -45,7 +48,8 @@ const templateEnvSchema = [
             ["tanstack-router", "vanilla-extract"]
         ],
         variables: {
-            VITE_API_KEY: "https://hp-api.onrender.com/api/characters"
+            VITE_API_KEY: "https://hp-api.onrender.com/api/characters",
+            VITE_POKEMON_API_URL: "https://pokeapi.co/api/v2/pokemon?limit=20"
         }
     }
 ] as const;

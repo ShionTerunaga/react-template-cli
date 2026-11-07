@@ -5,6 +5,7 @@ import {
     type HttpErrorStatusErrorMessage,
     type HttpErrorStatusResponse,
 } from "../http/http-scheme";
+import { ja } from "@/shared/lang/ja";
 
 export interface FetcherErrorStatusScheme extends HttpCustomStatusScheme {
     returnNotSetAPIUrl: 4040;
@@ -52,11 +53,7 @@ export const fetcherErrorScheme: FetchErrorScheme = (function () {
     /**API仕様や画面仕様で変更 */
     const fetchErrorMessage: FetcherErrorMessageScheme = {
         ...httpErrorMessage,
-        returnNotSetAPIUrl: "APIのURLが設定されていません",
-        returnSchemeError: "スキームエラーが発生しました",
-        returnParseError: "データのパースに失敗しました",
-        returnFetchFunctionError: "フェッチ関数でエラーが発生しました",
-        returnUnknownError: "不明なエラーが発生しました",
+        ...ja.shared.error.fetcher,
     };
     return {
         httpErrorStatusResponse,

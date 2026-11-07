@@ -23,17 +23,25 @@ export default function Home() {
                     <li>
                         <Link
                             className={homePageStyle.navItemLink}
-                            href="/force-cache-potter"
+                            href="/pokemon-force-cache"
                         >
-                            {ja.app.home.toForceCachePotter}
+                            {ja.app.home.toPokemonForceCache}
                         </Link>
                     </li>
                     <li>
                         <Link
                             className={homePageStyle.navItemLink}
-                            href="/no-store-potter"
+                            href="/pokemon-dynamic-fetch"
                         >
-                            {ja.app.home.toNoStorePotter}
+                            {ja.app.home.toPokemonNoStore}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            className={homePageStyle.navItemLink}
+                            href="/pokemon-revalidate"
+                        >
+                            {ja.app.home.toPokemonRevalidate}
                         </Link>
                     </li>
                     <li>

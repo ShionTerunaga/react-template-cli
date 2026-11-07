@@ -20,6 +20,11 @@ const homeScreenStyle = {
         letterSpacing: "-0.03em",
         marginBottom: 16
     }),
+    description: style({
+        color: "#334155",
+        lineHeight: 1.6,
+        marginBottom: 24
+    }),
     navList: style({
         listStyle: "none",
         display: "grid",

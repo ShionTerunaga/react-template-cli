@@ -18,22 +18,21 @@ export function Card<T extends Props>(
 ) {
     const { title, src, alt, srcWidth, srcHeight, boxHeight } = props;
 
-    // Integrate dynamic width/height via inline style (optional: could be arbitrary Tailwind classes)
     const cardStyle: CSSProperties = { width: srcWidth, height: boxHeight };
 
     return (
         <Box
-            className="border border-[#cccccc] rounded-[10px] overflow-hidden shadow-[0_4px_8px_rgba(0,0,0,0.1)] text-center m-[20px]"
+            className="m-[0.8rem] overflow-hidden rounded-[18px] border border-[#dbe1ea] bg-white/[0.92] text-center shadow-[0_12px_28px_rgba(15,23,42,0.12)] backdrop-blur-[6px] transition-[transform,box-shadow,border-color] duration-200 ease-in hover:-translate-y-1 hover:border-[#93c5fd] hover:shadow-[0_20px_36px_rgba(30,64,175,0.22)]"
             style={cardStyle}
         >
             <Image
                 src={src}
                 alt={alt}
-                className="object-cover w-full"
+                className="w-full border-b border-b-slate-200 object-cover"
                 width={srcWidth}
                 height={srcHeight}
             />
-            <p className="p-4 text-[1.2rem] font-bold text-[#333333] m-0">
+            <p className="m-0 p-[0.9rem] text-[1rem] font-bold leading-[1.35] text-slate-900">
                 {title}
             </p>
         </Box>

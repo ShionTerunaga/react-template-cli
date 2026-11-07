@@ -8,14 +8,22 @@ function HomeLayout() {
         <Box as="main" className={homePageStyle.pageRoot}>
             <Box as="section" className={homePageStyle.container}>
                 <Heading className={homePageStyle.heading}>{ja.app.home.title}</Heading>
-                <p className={homePageStyle.description}>
-                    ルーティングと動的データ取得をこのテンプレートで すぐ試せます。
-                </p>
+                <p className={homePageStyle.description}>{ja.app.home.description}</p>
 
                 <ul className={homePageStyle.navList}>
                     <li>
-                        <Link className={homePageStyle.navItemLink} to="/single-dynamic-fetch">
-                            {ja.app.home.toSingleDynamicPotter}
+                        <Link className={homePageStyle.navItemLink} to="/pokemon-dynamic-fetch">
+                            {ja.app.home.toPokemonDynamicFetch}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className={homePageStyle.navItemLink} to="/pokemon-query">
+                            {ja.app.home.toPokemonQuery}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className={homePageStyle.navItemLink} to="/pokemon-query-loader">
+                            {ja.app.home.toPokemonQueryLoader}
                         </Link>
                     </li>
                 </ul>

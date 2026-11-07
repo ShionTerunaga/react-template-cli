@@ -3,6 +3,25 @@ import { ja } from "@/shared/lang/ja";
 import Link from "next/link";
 import { classMerger } from "ts-utility-kit/merger";
 
+const navigationLinkClassName = classMerger([
+    "block",
+    "rounded-xl",
+    "border",
+    "border-slate-300",
+    "bg-slate-50",
+    "px-4",
+    "py-[14px]",
+    "font-medium",
+    "text-slate-900",
+    "no-underline",
+    "transition-[transform,box-shadow,border-color]",
+    "duration-200",
+    "ease-in",
+    "hover:-translate-y-0.5",
+    "hover:border-blue-400",
+    "hover:shadow-[0_10px_24px_rgba(59,130,246,0.16)]"
+]);
+
 export const metadata = {
     title: ja.app.home.title,
     description: "Next.js サンプルアプリのホームページです。"
@@ -58,74 +77,31 @@ export default function Home() {
                 >
                     <li>
                         <Link
-                            className={classMerger([
-                                "block",
-                                "rounded-xl",
-                                "border",
-                                "border-slate-300",
-                                "bg-slate-50",
-                                "px-4",
-                                "py-[14px]",
-                                "font-medium",
-                                "text-slate-900",
-                                "no-underline",
-                                "transition-[transform,box-shadow,border-color]",
-                                "duration-200",
-                                "ease-in",
-                                "hover:-translate-y-0.5",
-                                "hover:border-blue-400",
-                                "hover:shadow-[0_10px_24px_rgba(59,130,246,0.16)]"
-                            ])}
-                            href="/force-cache-potter"
+                            className={navigationLinkClassName}
+                            href="/pokemon-force-cache"
                         >
-                            {ja.app.home.toForceCachePotter}
+                            {ja.app.home.toPokemonForceCache}
                         </Link>
                     </li>
                     <li>
                         <Link
-                            className={classMerger([
-                                "block",
-                                "rounded-xl",
-                                "border",
-                                "border-slate-300",
-                                "bg-slate-50",
-                                "px-4",
-                                "py-[14px]",
-                                "font-medium",
-                                "text-slate-900",
-                                "no-underline",
-                                "transition-[transform,box-shadow,border-color]",
-                                "duration-200",
-                                "ease-in",
-                                "hover:-translate-y-0.5",
-                                "hover:border-blue-400",
-                                "hover:shadow-[0_10px_24px_rgba(59,130,246,0.16)]"
-                            ])}
-                            href="/no-store-potter"
+                            className={navigationLinkClassName}
+                            href="/pokemon-dynamic-fetch"
                         >
-                            {ja.app.home.toNoStorePotter}
+                            {ja.app.home.toPokemonNoStore}
                         </Link>
                     </li>
                     <li>
                         <Link
-                            className={classMerger([
-                                "block",
-                                "rounded-xl",
-                                "border",
-                                "border-slate-300",
-                                "bg-slate-50",
-                                "px-4",
-                                "py-[14px]",
-                                "font-medium",
-                                "text-slate-900",
-                                "no-underline",
-                                "transition-[transform,box-shadow,border-color]",
-                                "duration-200",
-                                "ease-in",
-                                "hover:-translate-y-0.5",
-                                "hover:border-blue-400",
-                                "hover:shadow-[0_10px_24px_rgba(59,130,246,0.16)]"
-                            ])}
+                            className={navigationLinkClassName}
+                            href="/pokemon-revalidate"
+                        >
+                            {ja.app.home.toPokemonRevalidate}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            className={navigationLinkClassName}
                             href="/server-action-sample"
                         >
                             {ja.app.home.toServerActionSample}

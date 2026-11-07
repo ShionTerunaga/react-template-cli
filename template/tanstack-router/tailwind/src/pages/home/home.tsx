@@ -32,7 +32,7 @@ function HomeLayout() {
                     {ja.app.home.title}
                 </Heading>
                 <p className={classMerger(["mb-6", "leading-[1.6]", "text-slate-700"])}>
-                    ルーティングと動的データ取得をこのテンプレートで すぐ試せます。
+                    {ja.app.home.description}
                 </p>
 
                 <ul className={classMerger(["grid", "list-none", "gap-3", "p-0"])}>
@@ -56,9 +56,59 @@ function HomeLayout() {
                                 "hover:border-blue-400",
                                 "hover:shadow-[0_10px_24px_rgba(59,130,246,0.16)]",
                             ])}
-                            to="/single-dynamic-fetch"
+                            to="/pokemon-dynamic-fetch"
                         >
-                            {ja.app.home.toSingleDynamicPotter}
+                            {ja.app.home.toPokemonDynamicFetch}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            className={classMerger([
+                                "block",
+                                "rounded-xl",
+                                "border",
+                                "border-slate-300",
+                                "bg-slate-50",
+                                "px-4",
+                                "py-[14px]",
+                                "font-medium",
+                                "text-slate-900",
+                                "no-underline",
+                                "transition-[transform,box-shadow,border-color]",
+                                "duration-200",
+                                "ease-in",
+                                "hover:-translate-y-0.5",
+                                "hover:border-blue-400",
+                                "hover:shadow-[0_10px_24px_rgba(59,130,246,0.16)]",
+                            ])}
+                            to="/pokemon-query"
+                        >
+                            {ja.app.home.toPokemonQuery}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            className={classMerger([
+                                "block",
+                                "rounded-xl",
+                                "border",
+                                "border-slate-300",
+                                "bg-slate-50",
+                                "px-4",
+                                "py-[14px]",
+                                "font-medium",
+                                "text-slate-900",
+                                "no-underline",
+                                "transition-[transform,box-shadow,border-color]",
+                                "duration-200",
+                                "ease-in",
+                                "hover:-translate-y-0.5",
+                                "hover:border-blue-400",
+                                "hover:shadow-[0_10px_24px_rgba(59,130,246,0.16)]",
+                            ])}
+                            to="/pokemon-query-loader"
+                        >
+                            {ja.app.home.toPokemonQueryLoader}
                         </Link>
                     </li>
                 </ul>

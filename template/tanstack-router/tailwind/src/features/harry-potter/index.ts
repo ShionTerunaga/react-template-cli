@@ -4,5 +4,6 @@ export * from "./service/get-character";
 
 export * from "./hooks/single-page-characters";
 export * from "./hooks/characters.type";
+export * from "./hooks/characters-query";
 
 export * from "./components/card-list-view/card-list-view";

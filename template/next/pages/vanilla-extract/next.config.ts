@@ -12,7 +12,10 @@ const nextConfig: NextConfig = {
     reactCompiler: true,
     reactStrictMode: true,
     images: {
-        remotePatterns: [new URL("https://ik.imagekit.io/**")]
+        remotePatterns: [
+            new URL("https://ik.imagekit.io/**"),
+            new URL("https://raw.githubusercontent.com/PokeAPI/sprites/**")
+        ]
     }
 };
 

@@ -8,70 +8,182 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root";
-import { Route as SingleDynamicFetchRouteImport } from "./routes/single-dynamic-fetch";
-import { Route as IndexRouteImport } from "./routes/index";
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as TanstackQueryLoaderRouteImport } from './routes/tanstack-query-loader'
+import { Route as TanstackQueryRouteImport } from './routes/tanstack-query'
+import { Route as SingleDynamicFetchRouteImport } from './routes/single-dynamic-fetch'
+import { Route as PokemonQueryLoaderRouteImport } from './routes/pokemon-query-loader'
+import { Route as PokemonQueryRouteImport } from './routes/pokemon-query'
+import { Route as PokemonDynamicFetchRouteImport } from './routes/pokemon-dynamic-fetch'
+import { Route as IndexRouteImport } from './routes/index'
 
+const TanstackQueryLoaderRoute = TanstackQueryLoaderRouteImport.update({
+  id: '/tanstack-query-loader',
+  path: '/tanstack-query-loader',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TanstackQueryRoute = TanstackQueryRouteImport.update({
+  id: '/tanstack-query',
+  path: '/tanstack-query',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SingleDynamicFetchRoute = SingleDynamicFetchRouteImport.update({
-    id: "/single-dynamic-fetch",
-    path: "/single-dynamic-fetch",
-    getParentRoute: () => rootRouteImport,
-} as any);
+  id: '/single-dynamic-fetch',
+  path: '/single-dynamic-fetch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PokemonQueryLoaderRoute = PokemonQueryLoaderRouteImport.update({
+  id: '/pokemon-query-loader',
+  path: '/pokemon-query-loader',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PokemonQueryRoute = PokemonQueryRouteImport.update({
+  id: '/pokemon-query',
+  path: '/pokemon-query',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PokemonDynamicFetchRoute = PokemonDynamicFetchRouteImport.update({
+  id: '/pokemon-dynamic-fetch',
+  path: '/pokemon-dynamic-fetch',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
-    id: "/",
-    path: "/",
-    getParentRoute: () => rootRouteImport,
-} as any);
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
-    "/": typeof IndexRoute;
-    "/single-dynamic-fetch": typeof SingleDynamicFetchRoute;
+  '/': typeof IndexRoute
+  '/pokemon-dynamic-fetch': typeof PokemonDynamicFetchRoute
+  '/pokemon-query': typeof PokemonQueryRoute
+  '/pokemon-query-loader': typeof PokemonQueryLoaderRoute
+  '/single-dynamic-fetch': typeof SingleDynamicFetchRoute
+  '/tanstack-query': typeof TanstackQueryRoute
+  '/tanstack-query-loader': typeof TanstackQueryLoaderRoute
 }
 export interface FileRoutesByTo {
-    "/": typeof IndexRoute;
-    "/single-dynamic-fetch": typeof SingleDynamicFetchRoute;
+  '/': typeof IndexRoute
+  '/pokemon-dynamic-fetch': typeof PokemonDynamicFetchRoute
+  '/pokemon-query': typeof PokemonQueryRoute
+  '/pokemon-query-loader': typeof PokemonQueryLoaderRoute
+  '/single-dynamic-fetch': typeof SingleDynamicFetchRoute
+  '/tanstack-query': typeof TanstackQueryRoute
+  '/tanstack-query-loader': typeof TanstackQueryLoaderRoute
 }
 export interface FileRoutesById {
-    __root__: typeof rootRouteImport;
-    "/": typeof IndexRoute;
-    "/single-dynamic-fetch": typeof SingleDynamicFetchRoute;
+  __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/pokemon-dynamic-fetch': typeof PokemonDynamicFetchRoute
+  '/pokemon-query': typeof PokemonQueryRoute
+  '/pokemon-query-loader': typeof PokemonQueryLoaderRoute
+  '/single-dynamic-fetch': typeof SingleDynamicFetchRoute
+  '/tanstack-query': typeof TanstackQueryRoute
+  '/tanstack-query-loader': typeof TanstackQueryLoaderRoute
 }
 export interface FileRouteTypes {
-    fileRoutesByFullPath: FileRoutesByFullPath;
-    fullPaths: "/" | "/single-dynamic-fetch";
-    fileRoutesByTo: FileRoutesByTo;
-    to: "/" | "/single-dynamic-fetch";
-    id: "__root__" | "/" | "/single-dynamic-fetch";
-    fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths:
+    | '/'
+    | '/pokemon-dynamic-fetch'
+    | '/pokemon-query'
+    | '/pokemon-query-loader'
+    | '/single-dynamic-fetch'
+    | '/tanstack-query'
+    | '/tanstack-query-loader'
+  fileRoutesByTo: FileRoutesByTo
+  to:
+    | '/'
+    | '/pokemon-dynamic-fetch'
+    | '/pokemon-query'
+    | '/pokemon-query-loader'
+    | '/single-dynamic-fetch'
+    | '/tanstack-query'
+    | '/tanstack-query-loader'
+  id:
+    | '__root__'
+    | '/'
+    | '/pokemon-dynamic-fetch'
+    | '/pokemon-query'
+    | '/pokemon-query-loader'
+    | '/single-dynamic-fetch'
+    | '/tanstack-query'
+    | '/tanstack-query-loader'
+  fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-    IndexRoute: typeof IndexRoute;
-    SingleDynamicFetchRoute: typeof SingleDynamicFetchRoute;
+  IndexRoute: typeof IndexRoute
+  PokemonDynamicFetchRoute: typeof PokemonDynamicFetchRoute
+  PokemonQueryRoute: typeof PokemonQueryRoute
+  PokemonQueryLoaderRoute: typeof PokemonQueryLoaderRoute
+  SingleDynamicFetchRoute: typeof SingleDynamicFetchRoute
+  TanstackQueryRoute: typeof TanstackQueryRoute
+  TanstackQueryLoaderRoute: typeof TanstackQueryLoaderRoute
 }
 
-declare module "@tanstack/react-router" {
-    interface FileRoutesByPath {
-        "/single-dynamic-fetch": {
-            id: "/single-dynamic-fetch";
-            path: "/single-dynamic-fetch";
-            fullPath: "/single-dynamic-fetch";
-            preLoaderRoute: typeof SingleDynamicFetchRouteImport;
-            parentRoute: typeof rootRouteImport;
-        };
-        "/": {
-            id: "/";
-            path: "/";
-            fullPath: "/";
-            preLoaderRoute: typeof IndexRouteImport;
-            parentRoute: typeof rootRouteImport;
-        };
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/tanstack-query-loader': {
+      id: '/tanstack-query-loader'
+      path: '/tanstack-query-loader'
+      fullPath: '/tanstack-query-loader'
+      preLoaderRoute: typeof TanstackQueryLoaderRouteImport
+      parentRoute: typeof rootRouteImport
     }
+    '/tanstack-query': {
+      id: '/tanstack-query'
+      path: '/tanstack-query'
+      fullPath: '/tanstack-query'
+      preLoaderRoute: typeof TanstackQueryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/single-dynamic-fetch': {
+      id: '/single-dynamic-fetch'
+      path: '/single-dynamic-fetch'
+      fullPath: '/single-dynamic-fetch'
+      preLoaderRoute: typeof SingleDynamicFetchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pokemon-query-loader': {
+      id: '/pokemon-query-loader'
+      path: '/pokemon-query-loader'
+      fullPath: '/pokemon-query-loader'
+      preLoaderRoute: typeof PokemonQueryLoaderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pokemon-query': {
+      id: '/pokemon-query'
+      path: '/pokemon-query'
+      fullPath: '/pokemon-query'
+      preLoaderRoute: typeof PokemonQueryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pokemon-dynamic-fetch': {
+      id: '/pokemon-dynamic-fetch'
+      path: '/pokemon-dynamic-fetch'
+      fullPath: '/pokemon-dynamic-fetch'
+      preLoaderRoute: typeof PokemonDynamicFetchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+  }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-    IndexRoute: IndexRoute,
-    SingleDynamicFetchRoute: SingleDynamicFetchRoute,
-};
+  IndexRoute: IndexRoute,
+  PokemonDynamicFetchRoute: PokemonDynamicFetchRoute,
+  PokemonQueryRoute: PokemonQueryRoute,
+  PokemonQueryLoaderRoute: PokemonQueryLoaderRoute,
+  SingleDynamicFetchRoute: SingleDynamicFetchRoute,
+  TanstackQueryRoute: TanstackQueryRoute,
+  TanstackQueryLoaderRoute: TanstackQueryLoaderRoute,
+}
 export const routeTree = rootRouteImport
-    ._addFileChildren(rootRouteChildren)
-    ._addFileTypes<FileRouteTypes>();
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
