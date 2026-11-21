@@ -6,3 +6,4 @@ coverage
 .reports
 bin
 .tmp
+.env

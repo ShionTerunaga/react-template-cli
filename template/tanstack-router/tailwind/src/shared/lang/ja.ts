@@ -10,20 +10,20 @@ export const ja = {
             title: "こんにちは、tanstack-router！",
             description: "ルーティングと動的データ取得をこのテンプレートですぐ試せます。",
             toPokemonDynamicFetch: "PokeAPI の動的データ取得例へ",
-            toPokemonQuery: "PokeAPI と useQuery の例へ",
+            toPokemonQuery: "PokeAPI と TanStack Query の例へ",
             toPokemonQueryLoader: "PokeAPI と Router loader の連携例へ",
         },
         singleDynamicPotter: {
             title: "動的なデータ収集",
         },
         tanstackQuery: {
-            title: "TanStack Query の useQuery によるデータ取得",
+            title: "TanStack Query によるデータ取得",
         },
         tanstackQueryLoader: {
             title: "Router loader と TanStack Query によるデータ取得",
         },
         pokemonQuery: {
-            title: "PokeAPI と useQuery によるデータ取得",
+            title: "PokeAPI と TanStack Query によるデータ取得",
         },
         pokemonDynamicFetch: {
             title: "PokeAPI による動的なデータ取得",

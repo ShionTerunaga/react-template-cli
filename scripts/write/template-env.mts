@@ -23,7 +23,8 @@ const templateEnvSchema = [
     {
         projects: [
             ["next", "app", "tailwind"],
-            ["next", "app", "vanilla-extract"]
+            ["next", "app", "vanilla-extract"],
+            ["next", "app", "stylex"]
         ],
         variables: {
             API_KEY: "https://hp-api.onrender.com/api/characters",
@@ -34,7 +35,8 @@ const templateEnvSchema = [
     {
         projects: [
             ["next", "pages", "tailwind"],
-            ["next", "pages", "vanilla-extract"]
+            ["next", "pages", "vanilla-extract"],
+            ["next", "pages", "stylex"]
         ],
         variables: {
             NEXT_PUBLIC_API_KEY: "https://hp-api.onrender.com/api/characters",
@@ -45,7 +47,8 @@ const templateEnvSchema = [
     {
         projects: [
             ["tanstack-router", "tailwind"],
-            ["tanstack-router", "vanilla-extract"]
+            ["tanstack-router", "vanilla-extract"],
+            ["tanstack-router", "stylex"]
         ],
         variables: {
             VITE_API_KEY: "https://hp-api.onrender.com/api/characters",

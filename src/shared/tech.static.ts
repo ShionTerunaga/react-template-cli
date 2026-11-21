@@ -22,7 +22,8 @@ export const techSchema = {
     ],
     css: [
         { label: "Tailwind CSS", value: "tailwind" },
-        { label: "Vanilla Extract", value: "vanilla-extract" }
+        { label: "Vanilla Extract", value: "vanilla-extract" },
+        { label: "StyleX", value: "stylex" }
     ],
     libraries: [
         {

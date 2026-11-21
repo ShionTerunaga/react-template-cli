@@ -164,9 +164,8 @@ The template includes four data-fetching examples:
 
 - `/tanstack-query` and `/tanstack-query-loader` use the Harry Potter API.
 - `/pokemon-query` and `/pokemon-query-loader` use PokeAPI.
-- The `-loader` routes use the route `loader` with `ensureQueryData`, then read the
-  prefetched cache with `useSuspenseQuery`. The other routes handle `useQuery` states in
-  the page component.
+- Query routes use the route `loader` with `ensureQueryData`, then read the prefetched
+  cache with `useSuspenseQuery`.
 
 Each feature shares its query key, query function, and cache settings from its `hooks`
 directory. `VITE_API_KEY` configures the Harry Potter API, while

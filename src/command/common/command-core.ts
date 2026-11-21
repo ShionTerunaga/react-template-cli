@@ -44,7 +44,7 @@ export const commanderCore = (async function () {
         )
         .option(
             "-c,--css <css>",
-            "select css framework (tailwind | vanilla-extract)"
+            "select css framework (tailwind | vanilla-extract | stylex)"
         )
         .option("--use-all-components", "install all available components")
         .parse(process.argv);

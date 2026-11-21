@@ -29,6 +29,11 @@ def get_actions():
             "css": KEYBOARD["ArrowDown"] + KEYBOARD["Enter"],
         },
         {
+            "project_name": "next-app-stylex",
+            "framework": KEYBOARD["ArrowDown"] + KEYBOARD["Enter"],
+            "css": KEYBOARD["ArrowDown"] + KEYBOARD["ArrowDown"] + KEYBOARD["Enter"],
+        },
+        {
             "project_name": "next-pages-tailwind",
             "framework": (
                 KEYBOARD["ArrowDown"]
@@ -47,6 +52,15 @@ def get_actions():
             "css": KEYBOARD["ArrowDown"] + KEYBOARD["Enter"],
         },
         {
+            "project_name": "next-pages-stylex",
+            "framework": (
+                KEYBOARD["ArrowDown"]
+                + KEYBOARD["ArrowDown"]
+                + KEYBOARD["Enter"]
+            ),
+            "css": KEYBOARD["ArrowDown"] + KEYBOARD["ArrowDown"] + KEYBOARD["Enter"],
+        },
+        {
             "project_name": "tanstack-router-tailwind",
             "framework": KEYBOARD["Enter"],
             "css": KEYBOARD["Enter"],
@@ -55,6 +69,11 @@ def get_actions():
             "project_name": "tanstack-router-vanilla-extract",
             "framework": KEYBOARD["Enter"],
             "css": KEYBOARD["ArrowDown"] + KEYBOARD["Enter"],
+        },
+        {
+            "project_name": "tanstack-router-stylex",
+            "framework": KEYBOARD["Enter"],
+            "css": KEYBOARD["ArrowDown"] + KEYBOARD["ArrowDown"] + KEYBOARD["Enter"],
         },
     ]
 
