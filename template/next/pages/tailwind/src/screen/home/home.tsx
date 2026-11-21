@@ -59,30 +59,57 @@ function HomeScreen() {
                         "shadow-[0_22px_50px_rgba(15,23,42,0.12)]"
                     ])}
                 >
-                    <Heading className={classMerger(["mb-4", "tracking-[-0.03em]"])}>
+                    <Heading
+                        className={classMerger(["mb-4", "tracking-[-0.03em]"])}
+                    >
                         {ja.app.home.title}
                     </Heading>
-                    <p className={classMerger(["mb-6", "leading-[1.6]", "text-slate-700"])}>
+                    <p
+                        className={classMerger([
+                            "mb-6",
+                            "leading-[1.6]",
+                            "text-slate-700"
+                        ])}
+                    >
                         {ja.app.home.description}
                     </p>
-                    <ul className={classMerger(["grid", "list-none", "gap-3", "p-0"])}>
+                    <ul
+                        className={classMerger([
+                            "grid",
+                            "list-none",
+                            "gap-3",
+                            "p-0"
+                        ])}
+                    >
                         <li>
-                            <Link className={navigationLinkClassName} href="/pokemon-server-side-render">
+                            <Link
+                                className={navigationLinkClassName}
+                                href="/pokemon-server-side-render"
+                            >
                                 {ja.app.home.toPokemonServerSideRender}
                             </Link>
                         </li>
                         <li>
-                            <Link className={navigationLinkClassName} href="/pokemon-static-generator">
+                            <Link
+                                className={navigationLinkClassName}
+                                href="/pokemon-static-generator"
+                            >
                                 {ja.app.home.toPokemonStaticGenerator}
                             </Link>
                         </li>
                         <li>
-                            <Link className={navigationLinkClassName} href="/pokemon-isr">
+                            <Link
+                                className={navigationLinkClassName}
+                                href="/pokemon-isr"
+                            >
                                 {ja.app.home.toPokemonIsr}
                             </Link>
                         </li>
                         <li>
-                            <Link className={navigationLinkClassName} href="/pokemon-dynamic-fetch">
+                            <Link
+                                className={navigationLinkClassName}
+                                href="/pokemon-dynamic-fetch"
+                            >
                                 {ja.app.home.toPokemonDynamicFetch}
                             </Link>
                         </li>

@@ -7,8 +7,7 @@ import type { FetcherError } from "@/shared/error/fetcher";
 import type { PokemonView } from "../model/model-view";
 
 export function useSinglePagePokemon() {
-    const [fetchedPokemon, setFetchedPokemon] =
-        useState<Option<Array<PokemonView>>>(createNone());
+    const [fetchedPokemon, setFetchedPokemon] = useState<Option<Array<PokemonView>>>(createNone());
     const [error, setError] = useState<Option<FetcherError>>(createNone());
 
     useEffect(() => {

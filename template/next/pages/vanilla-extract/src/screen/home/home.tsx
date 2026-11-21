@@ -22,7 +22,9 @@ function HomeScreen() {
                     <Heading className={homeScreenStyle.heading}>
                         {ja.app.home.title}
                     </Heading>
-                    <p className={homeScreenStyle.description}>{ja.app.home.description}</p>
+                    <p className={homeScreenStyle.description}>
+                        {ja.app.home.description}
+                    </p>
 
                     <ul className={homeScreenStyle.navList}>
                         <li>

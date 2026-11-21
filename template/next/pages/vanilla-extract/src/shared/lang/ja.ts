@@ -7,7 +7,8 @@ export const ja = {
         },
         home: {
             title: "こんにちは,Next.js",
-            description: "PokeAPI を使ってNext.jsのデータ取得方式を比較できます。",
+            description:
+                "PokeAPI を使ってNext.jsのデータ取得方式を比較できます。",
             openPopup: "説明",
             toPokemonServerSideRender: "PokeAPI の SSR 取得例へ",
             toPokemonStaticGenerator: "PokeAPI の SSG 取得例へ",

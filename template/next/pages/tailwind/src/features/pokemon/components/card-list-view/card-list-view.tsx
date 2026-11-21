@@ -35,7 +35,9 @@ export function PokemonCardListView({ pokemon, title }: Props) {
                 ])}
             >
                 <FontCenter className="mb-[28px]" as="div">
-                    <Heading className={classMerger(["tracking-[-0.02em]"])}>{title}</Heading>
+                    <Heading className={classMerger(["tracking-[-0.02em]"])}>
+                        {title}
+                    </Heading>
                 </FontCenter>
 
                 <GridBox>

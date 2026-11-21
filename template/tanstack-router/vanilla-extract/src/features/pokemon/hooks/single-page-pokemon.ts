@@ -7,19 +7,12 @@ import type { FetcherError } from "@/shared/error/fetcher";
 import type { PokemonView } from "../model/model-view";
 
 export function useSinglePagePokemon() {
-    const [fetchedPokemon, setFetchedPokemon] =
-        useState<Option<Array<PokemonView>>>(createNone());
+    const [fetchedPokemon, setFetchedPokemon] = useState<Option<Array<PokemonView>>>(createNone());
     const [error, setError] = useState<Option<FetcherError>>(createNone());
 
     useEffect(() => {
-        let ignore = false;
-
         getPokemon()
             .then((result) => {
-                if (ignore) {
-                    return;
-                }
-
                 if (isErr(result)) {
                     setError(createSome(result.err));
                     return;
@@ -32,14 +25,8 @@ export function useSinglePagePokemon() {
                 setFetchedPokemon(createSome(result.value.value));
             })
             .catch((caughtError) => {
-                if (!ignore) {
-                    setError(createSome(caughtError));
-                }
+                setError(createSome(caughtError));
             });
-
-        return () => {
-            ignore = true;
-        };
     }, []);
 
     return {
