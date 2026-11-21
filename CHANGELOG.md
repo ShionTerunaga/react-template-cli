@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0
+
+### Minor Changes
+
+- [`6a2f195`](https://github.com/ShionTerunaga/react-template-cli/commit/6a2f195359c68585559ea76a1f0609c77130d28e)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Added a new API
+  (Pokémon API).
+
 ## 0.1.6
 
 ### Patch Changes
