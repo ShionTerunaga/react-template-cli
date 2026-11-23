@@ -1,8 +1,12 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+@layer resets {
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
 }
+
+@stylex;
 
 body {
     font-family: var(--font-geist-sans), system-ui, sans-serif;

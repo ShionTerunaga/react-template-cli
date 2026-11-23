@@ -1,8 +1,10 @@
-import { createErr, createOk, Result } from "ts-utility-kit/result";
-import { RandomDogRes } from "../model/random-dog";
+import type { Result } from "ts-utility-kit/result";
+import { createErr, createOk } from "ts-utility-kit/result";
+import type { RandomDogRes } from "../model/random-dog";
 import { createFetcherError } from "@/shared/error/fetcher";
-import { createSome, Option } from "ts-utility-kit/option";
-import { FetcherError } from "@/shared/error/fetcher";
+import type { Option } from "ts-utility-kit/option";
+import { createSome } from "ts-utility-kit/option";
+import type { FetcherError } from "@/shared/error/fetcher";
 
 export function parseScheme(
     scheme: RandomDogRes

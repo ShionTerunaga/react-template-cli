@@ -1,8 +1,9 @@
-import { CheckerProps } from "@/shared/types/object";
+import type { CheckerProps } from "@/shared/types/object";
 import { headingFontStyle } from "./heading.style"; // Tailwind variants
-import { textColor, TextTheme } from "@/shared/theme/design-system";
-import { ChildrenOnly } from "@/shared/types/react";
-import { ElementType } from "react";
+import type { TextTheme } from "@/shared/theme/design-system";
+import { textColor } from "@/shared/theme/design-system";
+import type { ChildrenOnly } from "@/shared/types/react";
+import type { ElementType } from "react";
 import { classMerger } from "ts-utility-kit/merger";
 
 type HeadingFont = keyof typeof headingFontStyle;

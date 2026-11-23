@@ -1,6 +1,7 @@
-import { CheckerProps } from "@/shared/types/object";
-import Image, { StaticImageData } from "next/image";
-import { CSSProperties } from "react";
+import type { CheckerProps } from "@/shared/types/object";
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
+import type { CSSProperties } from "react";
 import cardStyles from "./card.stylex";
 import { Box } from "@/lib/ui";
 

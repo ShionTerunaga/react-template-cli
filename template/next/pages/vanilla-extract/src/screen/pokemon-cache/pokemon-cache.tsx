@@ -1,5 +1,6 @@
 import { Box } from "@/components/ui";
-import { PokemonCardListView, PokemonView } from "@/features/pokemon";
+import type { PokemonView } from "@/features/pokemon";
+import { PokemonCardListView } from "@/features/pokemon";
 import { ja } from "@/shared/lang/ja";
 
 interface Props {

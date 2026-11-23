@@ -2,7 +2,7 @@ import { assert, describe, expect, it } from "vitest";
 import { isSome } from "ts-utility-kit/option";
 import { isOk } from "ts-utility-kit/result";
 import { parsePokemonApi } from "@/features/pokemon/service/parse-api";
-import { PokemonListResponse } from "@/features/pokemon";
+import type { PokemonListResponse } from "@/features/pokemon";
 
 describe("parsePokemonApi", () => {
     it("PokeAPIの一覧を表示用データへ変換する", () => {

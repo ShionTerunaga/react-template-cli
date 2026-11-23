@@ -1,8 +1,8 @@
 import { Card } from "@/components/layout";
 import { Box, GridBox, Heading } from "@/components/ui";
 import { FontCenter } from "@/components/ui/center/font-center/font-center";
-import { SinglePageGetCharacters } from "@/features/harry-potter";
-import { CheckerProps } from "@/shared/types/object";
+import type { SinglePageGetCharacters } from "@/features/harry-potter";
+import type { CheckerProps } from "@/shared/types/object";
 
 interface Props<T extends SinglePageGetCharacters> {
     potters: Array<T>;

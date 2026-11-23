@@ -2,11 +2,12 @@
 
 import { appConfig } from "@/shared/config/config";
 import type { Result } from "ts-utility-kit/result";
-import { RandomDogRes, randomDogScheme } from "../model/random-dog";
+import type { RandomDogRes } from "../model/random-dog";
+import { randomDogScheme } from "../model/random-dog";
 import { parseScheme } from "./parse-scheme";
 import { hasParseFetcher } from "@/services/fetcher-get";
 import type { Option } from "ts-utility-kit/option";
-import { FetcherError } from "@/shared/error/fetcher";
+import type { FetcherError } from "@/shared/error/fetcher";
 
 export async function getRandomDog(): Promise<
     Result<Option<RandomDogRes>, FetcherError>

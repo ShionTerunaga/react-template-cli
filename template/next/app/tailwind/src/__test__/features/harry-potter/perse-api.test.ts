@@ -1,5 +1,5 @@
 import { describe, it, expect, assert } from "vitest";
-import { APIRes } from "@/features/harry-potter";
+import type { APIRes } from "@/features/harry-potter";
 import { parseApi } from "@/features/harry-potter/service/parse-api";
 import { createNone, createSome, isSome } from "ts-utility-kit/option";
 import { isOk } from "ts-utility-kit/result";

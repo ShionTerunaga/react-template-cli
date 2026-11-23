@@ -1,7 +1,7 @@
 import { Card } from "@/components/layout";
 import { Box, FontCenter, GridBox, Heading } from "@/components/ui";
-import { SinglePageGetCharacters } from "@/features/harry-potter";
-import { CheckerProps } from "@/shared/types/object";
+import type { SinglePageGetCharacters } from "@/features/harry-potter";
+import type { CheckerProps } from "@/shared/types/object";
 import cardListViewStyle from "./card-list-view.css";
 
 interface Props<T extends SinglePageGetCharacters> {

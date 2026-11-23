@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { createNone, createSome, isNone, Option } from "ts-utility-kit/option";
+import type { Option } from "ts-utility-kit/option";
+import { createNone, createSome, isNone } from "ts-utility-kit/option";
 import { isErr } from "ts-utility-kit/result";
 import { getPokemon } from "../service/get-pokemon";
-import { FetcherError } from "@/shared/error/fetcher";
-import { PokemonView } from "../model/model-view";
+import type { FetcherError } from "@/shared/error/fetcher";
+import type { PokemonView } from "../model/model-view";
 
 export function useSinglePagePokemon() {
     const [fetchedPokemon, setFetchedPokemon] =

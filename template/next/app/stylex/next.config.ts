@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import stylex from "@stylexjs/unplugin";
 
 const nextConfig: NextConfig = {
     images: {
@@ -9,17 +8,7 @@ const nextConfig: NextConfig = {
             new URL("https://raw.githubusercontent.com/PokeAPI/sprites/**")
         ]
     },
-    reactCompiler: true,
-    webpack(config, { dev }) {
-        config.plugins.push(
-            stylex.webpack({
-                dev,
-                runtimeInjection: false,
-                useCSSLayers: true
-            })
-        );
-        return config;
-    }
+    reactCompiler: true
 };
 
 export default nextConfig;

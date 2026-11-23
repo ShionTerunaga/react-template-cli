@@ -1,7 +1,7 @@
 "use client";
 
 import { getRandomDog } from "@/features/random-dog";
-import { RandomDogRes } from "@/features/random-dog/model/random-dog";
+import type { RandomDogRes } from "@/features/random-dog/model/random-dog";
 import { useState } from "react";
 import { type Option, createNone, isNone, isSome } from "ts-utility-kit/option";
 import { isOk } from "ts-utility-kit/result";

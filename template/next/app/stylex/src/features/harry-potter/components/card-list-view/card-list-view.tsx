@@ -1,7 +1,7 @@
 import { Card } from "@/components/card";
 import { Box, GridBox, Heading, FontCenter } from "@/lib/ui";
-import { APIView } from "@/features/harry-potter";
-import { CheckerProps } from "@/shared/types/object";
+import type { APIView } from "@/features/harry-potter";
+import type { CheckerProps } from "@/shared/types/object";
 import cardListViewStyle from "./card-list-view.stylex";
 
 interface Props {

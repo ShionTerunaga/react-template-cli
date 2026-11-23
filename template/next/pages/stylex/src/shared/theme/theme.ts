@@ -1,4 +1,4 @@
-import { Property } from "csstype";
+import type { Property } from "csstype";
 
 export const appTheme = {
     textNormal: "#333",

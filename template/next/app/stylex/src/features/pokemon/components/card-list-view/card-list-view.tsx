@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/card";
 import { Box, FontCenter, GridBox, Heading } from "@/lib/ui";
-import { PokemonView } from "../../model/model-view";
+import type { PokemonView } from "../../model/model-view";
 import cardListViewStyle from "./card-list-view.stylex";
 
 interface Props {

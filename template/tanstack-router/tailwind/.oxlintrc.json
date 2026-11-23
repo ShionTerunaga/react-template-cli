@@ -2,6 +2,7 @@
     "$schema": "./node_modules/oxlint/configuration_schema.json",
     "plugins": ["vitest"],
     "rules": {
+        "typescript/consistent-type-imports": "error",
         "vitest/no-conditional-tests": "error"
     }
 }

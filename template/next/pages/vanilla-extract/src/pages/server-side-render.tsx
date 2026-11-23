@@ -1,9 +1,10 @@
-import { APIView, getCharacter } from "@/features/harry-potter";
+import type { APIView } from "@/features/harry-potter";
+import { getCharacter } from "@/features/harry-potter";
 import type { Result } from "ts-utility-kit/result";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import ServerSideRenderScreen from "@/screen/server-side-render/server-side-render-screen";
 import type { Option } from "ts-utility-kit/option";
-import { FetcherError } from "@/shared/error/fetcher";
+import type { FetcherError } from "@/shared/error/fetcher";
 
 interface Props {
     character: Result<Option<APIView[]>, FetcherError>;

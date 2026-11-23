@@ -1,7 +1,7 @@
 import { Card } from "@/components/layout";
 import { Box, FontCenter, GridBox, Heading } from "@/components/ui";
 import { classMerger } from "ts-utility-kit/merger";
-import { PokemonView } from "../../model/model-view";
+import type { PokemonView } from "../../model/model-view";
 
 interface Props {
     pokemon: Array<PokemonView>;

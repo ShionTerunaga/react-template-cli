@@ -1,11 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
 import { getCharacter } from "../service/get-character";
-import { createNone, createSome, isNone, Option } from "ts-utility-kit/option";
+import {
+    createNone,
+    createSome,
+    isNone,
+    type Option
+} from "ts-utility-kit/option";
 import type { APIView } from "../model/model-view";
 import type { SinglePageGetCharacters } from "./characters.type";
 import { isErr } from "ts-utility-kit/result";
 
-import { FetcherError } from "@/shared/error/fetcher";
+import type { FetcherError } from "@/shared/error/fetcher";
 
 export function useSinglePageCharacters() {
     const [fetchCharacter, setFetchCharacter] =
@@ -14,28 +19,22 @@ export function useSinglePageCharacters() {
     const [error, setError] = useState<Option<FetcherError>>(createNone());
 
     useEffect(() => {
-        let isMounted = true;
+        getCharacter()
+            .then((result) => {
+                if (isErr(result)) {
+                    setError(createSome(result.err));
+                    return;
+                }
 
-        (async () => {
-            const result = await getCharacter();
+                if (isNone(result.value)) {
+                    return;
+                }
 
-            if (!isMounted) return;
-
-            if (isErr(result)) {
-                setError(createSome(result.err));
-                return;
-            }
-
-            if (isNone(result.value)) {
-                return;
-            }
-
-            setFetchCharacter(createSome(result.value.value));
-        })();
-
-        return () => {
-            isMounted = false;
-        };
+                setFetchCharacter(createSome(result.value.value));
+            })
+            .catch((error: FetcherError) => {
+                setError(createSome(error));
+            });
     }, []);
 
     const isLoading: boolean = useMemo(() => {

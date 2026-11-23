@@ -1,8 +1,10 @@
-import * as v from "valibot";
-import { createNone, isNone, Option } from "ts-utility-kit/option";
-import { createOk, isErr, Result } from "ts-utility-kit/result";
+import type * as v from "valibot";
+import type { Option } from "ts-utility-kit/option";
+import { createNone, isNone } from "ts-utility-kit/option";
+import type { Result } from "ts-utility-kit/result";
+import { createOk, isErr } from "ts-utility-kit/result";
 import { fetcher } from "./fetcher";
-import { FetcherError } from "@/shared/error/fetcher/fetcher-error";
+import type { FetcherError } from "@/shared/error/fetcher/fetcher-error";
 
 export async function hasParseFetcher<T extends v.GenericSchema, S>({
     url,

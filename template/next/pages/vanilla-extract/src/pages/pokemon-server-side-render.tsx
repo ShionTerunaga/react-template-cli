@@ -1,9 +1,10 @@
-import { getPokemon, PokemonView } from "@/features/pokemon";
+import type { PokemonView } from "@/features/pokemon";
+import { getPokemon } from "@/features/pokemon";
 import { PokemonCacheScreen } from "@/screen/pokemon-cache/pokemon-cache";
 import { ja } from "@/shared/lang/ja";
 import { isNone } from "ts-utility-kit/option";
 import { isErr } from "ts-utility-kit/result";
-import { GetServerSideProps } from "next";
+import type { GetServerSideProps } from "next";
 
 interface Props {
     pokemon: Array<PokemonView>;

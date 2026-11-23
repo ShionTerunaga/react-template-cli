@@ -1,9 +1,10 @@
-import { APIView, getCharacter } from "@/features/harry-potter";
+import type { APIView } from "@/features/harry-potter";
+import { getCharacter } from "@/features/harry-potter";
 import StaticGeneratorScreen from "@/screen/static-generator/static-generator";
 import type { Result } from "ts-utility-kit/result";
 import type { Option } from "ts-utility-kit/option";
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
-import { FetcherError } from "@/shared/error/fetcher";
+import type { FetcherError } from "@/shared/error/fetcher";
 
 interface Props {
     character: Result<Option<APIView[]>, FetcherError>;

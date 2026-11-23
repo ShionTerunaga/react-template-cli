@@ -1,4 +1,4 @@
-import { RandomDogRes } from "@/features/random-dog/model/random-dog";
+import type { RandomDogRes } from "@/features/random-dog/model/random-dog";
 import { parseScheme } from "@/features/random-dog/service/parse-scheme";
 import { isErr, isOk } from "ts-utility-kit/result";
 import { isSome } from "ts-utility-kit/option";

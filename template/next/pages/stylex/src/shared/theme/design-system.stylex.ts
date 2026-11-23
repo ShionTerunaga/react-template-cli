@@ -1,6 +1,6 @@
-export { backgroundColor, textColor } from "@/shared/stylex/presets";
+import { backgroundColor, textColor } from "@/shared/stylex/presets";
 
-export type TextTheme =
-    keyof typeof import("@/shared/stylex/presets").textColor;
-export type BackgroundTheme =
-    keyof typeof import("@/shared/stylex/presets").backgroundColor;
+export { backgroundColor, textColor };
+
+export type TextTheme = keyof typeof textColor;
+export type BackgroundTheme = keyof typeof backgroundColor;

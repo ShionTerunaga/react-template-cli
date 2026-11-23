@@ -1,6 +1,6 @@
 import { Card } from "@/components/layout";
 import { Box, FontCenter, GridBox, Heading } from "@/components/ui";
-import { PokemonView } from "../../model/model-view";
+import type { PokemonView } from "../../model/model-view";
 import cardListViewStyle from "./card-list-view.css";
 
 interface Props {

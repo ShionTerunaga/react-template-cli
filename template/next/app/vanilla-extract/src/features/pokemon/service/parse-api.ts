@@ -1,10 +1,11 @@
 import { createErr, createOk } from "ts-utility-kit/result";
 import { createSome } from "ts-utility-kit/option";
-import { createFetcherError, FetcherError } from "@/shared/error/fetcher";
-import { Option } from "ts-utility-kit/option";
-import { Result } from "ts-utility-kit/result";
-import { PokemonListResponse } from "../model/model-res";
-import { PokemonView } from "../model/model-view";
+import type { FetcherError } from "@/shared/error/fetcher";
+import { createFetcherError } from "@/shared/error/fetcher";
+import type { Option } from "ts-utility-kit/option";
+import type { Result } from "ts-utility-kit/result";
+import type { PokemonListResponse } from "../model/model-res";
+import type { PokemonView } from "../model/model-view";
 
 const pokemonImageBaseUrl =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork";

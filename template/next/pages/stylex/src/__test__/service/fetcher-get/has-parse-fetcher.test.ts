@@ -4,7 +4,8 @@ import { createOk, isErr, isOk } from "ts-utility-kit/result";
 import * as v from "valibot";
 import { assert, beforeEach, describe, expect, it, vi } from "vitest";
 
-const mockFetch = vi.fn();
+const mockFetch =
+    vi.fn<(...args: Parameters<typeof fetch>) => Promise<Partial<Response>>>();
 
 describe("hasParseFetcher", () => {
     beforeEach(() => {

@@ -1,8 +1,10 @@
-import { createOk, Result } from "ts-utility-kit/result";
-import { APIRes } from "../model/model-res";
-import { APIView } from "../model/model-view";
-import { createSome, Option, optionConversion } from "ts-utility-kit/option";
-import { FetcherError } from "@/shared/error/fetcher";
+import type { Result } from "ts-utility-kit/result";
+import { createOk } from "ts-utility-kit/result";
+import type { APIRes } from "../model/model-res";
+import type { APIView } from "../model/model-view";
+import type { Option } from "ts-utility-kit/option";
+import { createSome, optionConversion } from "ts-utility-kit/option";
+import type { FetcherError } from "@/shared/error/fetcher";
 
 export function parseApi(
     api: APIRes

@@ -34,7 +34,8 @@ const mockAPIData: APIRes = [
     }
 ];
 
-const mockFetch = vi.fn();
+const mockFetch =
+    vi.fn<(...args: Parameters<typeof fetch>) => Promise<Partial<Response>>>();
 
 describe("getCharacter", () => {
     beforeEach(() => {

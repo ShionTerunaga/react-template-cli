@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach, assert } from "vitest";
 import { appConfig } from "@/shared/config/config";
-import { APIRes, getCharacter } from "@/features/harry-potter";
+import type { APIRes } from "@/features/harry-potter";
+import { getCharacter } from "@/features/harry-potter";
 import { createNone, createSome, isSome } from "ts-utility-kit/option";
 import { isErr, isOk } from "ts-utility-kit/result";
 
@@ -33,7 +34,8 @@ const mockAPIData: APIRes = [
     }
 ];
 
-const mockFetch = vi.fn();
+const mockFetch =
+    vi.fn<(...args: Parameters<typeof fetch>) => Promise<Partial<Response>>>();
 
 describe("getCharacter", () => {
     beforeEach(() => {

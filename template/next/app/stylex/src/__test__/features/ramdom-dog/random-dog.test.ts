@@ -4,7 +4,8 @@ import { createNone, createSome } from "ts-utility-kit/option";
 import { isErr } from "ts-utility-kit/result";
 import { assert, beforeEach, describe, expect, it, vi } from "vitest";
 
-const mockFetch = vi.fn();
+const mockFetch =
+    vi.fn<(...args: Parameters<typeof fetch>) => Promise<Partial<Response>>>();
 
 describe("random-dog", () => {
     beforeEach(() => {
