@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.3.0
+
+### Minor Changes
+
+- [`014cc45`](https://github.com/ShionTerunaga/react-template-cli/commit/014cc451e1fe29aa5c17980d64a49a0e2607b53b)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Add StyleX
+  templates for Next.js App Router, Next.js Pages Router, and TanStack Router.
+
+### Patch Changes
+
+- [`cbe51f9`](https://github.com/ShionTerunaga/react-template-cli/commit/cbe51f962e5e26fe9accd10d4c1e1c9a62ee4503)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - fix hooks
+
 ## 0.2.0
 
 ### Minor Changes
